@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murphy & The Ziggys - Playlists</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-image: url('Hintergrund.jpg'); /* Nimmt dasselbe Hintergrundbild */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.4);
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 650px;
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* Der Zurück-Button ganz oben */
+        .back-link {
+            align-self: flex-start;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: #00e5ff;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 2.2em;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            text-shadow: 0px 4px 15px rgba(0,0,0,0.8);
+        }
+        p.subtitle {
+            font-weight: 300;
+            font-size: 1.1em;
+            color: #e2e8f0;
+            text-align: center;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+            text-shadow: 0px 2px 10px rgba(0,0,0,0.8);
+        }
+        .section {
+            background: rgba(15, 15, 20, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .button-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .link-button {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .link-button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+            border-color: rgba(0, 229, 255, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 229, 255, 0.2);
+        }
+        
+        /* Albumcover-Optik (Quadratisch mit runden Ecken statt ganz rund) */
+        .img-playlist {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            margin-right: 20px;
+            flex-shrink: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .link-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .link-title {
+            font-weight: 600;
+            font-size: 1.05em;
+            margin-bottom: 3px;
+            line-height: 1.3;
+        }
+        .link-desc {
+            font-weight: 300;
+            font-size: 0.85em;
+            color: #cbd5e1;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        <div class="container">
+            
+            <a href="index.html" class="back-link">← Zurück zur Hauptseite</a>
+
+            <h1>MURPHY & THE ZIGGYS</h1>
+            <p class="subtitle">YOUTUBE PLAYLISTS</p>
+
+            <div class="section">
+                <div class="button-grid">
+				
+                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7KBcTTdBMyqRhQJ_xVTgyB" target="_blank" class="link-button">
+                        <img src="Musikful.png" class="img-playlist" alt="Musikful">
+                        <div class="link-text">
+                            <span class="link-title">Musicful Full Songs</span>
+                            <span class="link-desc">Auf YouTube anhören</span>
+                        </div>
+                    </a>
+				
+				    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7TAhH9xQjeYV988Gp8sfda" target="_blank" class="link-button">
+                        <img src="Ziggy.png" class="img-playlist" alt="Song">
+                        <div class="link-text">
+                            <span class="link-title">INDIE WIDE OPEN: Von Singer-Songwriter zu Rock, Pop & Jazz</span>
+                            <span class="link-desc">Auf YouTube anhören</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7d8nY9k8F6HA68IKOIuQxV" target="_blank" class="link-button">
+                        <img src="Groove.png" class="img-playlist" alt="Groove">
+                        <div class="link-text">
+                            <span class="link-title">From Vinyl to Code: AI Rediscovers Funk & Soul</span>
+                            <span class="link-desc">Auf YouTube anhören</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX5hMctCMWQRdY_UiLtv6t6Y" target="_blank" class="link-button">
+                        <img src="AI_Vibes.jpg" class="img-playlist" alt="AI Vibes">
+                        <div class="link-text">
+                            <span class="link-title">Personal Stories Turned into Music Genre Mix</span>
+                            <span class="link-desc">Auf YouTube anhören</span>
+                        </div>
+                    </a>
+					
+                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX4Wlnz81334qYZgStYXKlhk" target="_blank" class="link-button">
+                        <img src="Love.png" class="img-playlist" alt="Love">
+                        <div class="link-text">
+                            <span class="link-title">The Love & Groove Protocol: Indie, Soul & Funk</span>
+                            <span class="link-desc">Auf YouTube anhören</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX74ighjx7ozblM54GyB6uUR" target="_blank" class="link-button">
+                        <img src="Rock.png" class="img-playlist" alt="Rock">
+                        <div class="link-text">
+                            <span class="link-title">Rock Without Borders: From Soft Ballads to Trash Metal 🇩🇪🇬🇧</span>
+                            <span class="link-desc">Auf YouTube anhören</span>
+                        </div>
+                    </a>
+					
+					                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX6tx4yv92BnFvRskfdFRo_T" target="_blank" class="link-button">
+                        <img src="Rap.png" class="img-playlist" alt="Rap">
+                        <div class="link-text">
+                            <span class="link-title">ARK CINEMATIC RAP</span>
+                            <span class="link-desc">Auf YouTube anhören</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7a7LoEgqkJdWPJiYqpdfGI" target="_blank" class="link-button">
+                        <img src="Hintergrund.jpg" class="img-playlist" alt="Experiment">
+                        <div class="link-text">
+                            <span class="link-title">Jenseits der Vorstellung: Das ultimative KI-Experiment</span>
+                            <span class="link-desc">Auf YouTube anhören</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7i-NCphIEpzeQGOUra9TvJ" target="_blank" class="link-button">
+                        <img src="no_skip.png" class="img-playlist" alt="No Skip">
+                        <div class="link-text">
+                            <span class="link-title">No Skip. Deep Drive.</span>
+                            <span class="link-desc">Auf YouTube anhören</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX4yw_4NmQfdISolWDoZKlbX" target="_blank" class="link-button">
+                        <img src="papa.png" class="img-playlist" alt="Papa">
+                        <div class="link-text">
+                            <span class="link-title">Dad’s Playlist – Musik kennt kein Alter</span>
+                            <span class="link-desc">Auf YouTube anhören</span>
+                        </div>
+                    </a>
+					
+                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX6NkGEuW7RonKX-1whgPqoA" target="_blank" class="link-button">
+                        <img src="Christmas.png" class="img-playlist" alt="Christmas">
+                        <div class="link-text">
+                            <span class="link-title">Murphy & The Ziggys Christmas</span>
+                            <span class="link-desc">Auf YouTube anhören</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
