@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Murphy's KI-Musik & Tutorials</title>
-    <!-- Lädt eine edle, moderne Schriftart für den professionellen Look -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Grundlegendes Design mit dem neuen Hintergrund */
         body {
             margin: 0;
             padding: 0;
@@ -21,8 +19,6 @@
             color: #ffffff;
             min-height: 100vh;
         }
-
-        /* Ein leichter, dunkler Schleier über dem ganzen Bild, damit der weiße Text überall strahlt */
         .overlay {
             background: rgba(0, 0, 0, 0.4);
             min-height: 100vh;
@@ -33,7 +29,6 @@
             padding: 50px 0;
             box-sizing: border-box;
         }
-
         .container {
             max-width: 650px;
             width: 90%;
@@ -42,8 +37,6 @@
             flex-direction: column;
             align-items: center;
         }
-
-        /* Profilbild (Avatar) ganz oben */
         .profile-avatar {
             width: 130px;
             height: 130px;
@@ -53,8 +46,6 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.7);
             object-fit: cover;
         }
-
-        /* Überschrift - Klar, weiß und edel */
         h1 {
             font-weight: 800;
             font-size: 2.5em;
@@ -64,7 +55,6 @@
             letter-spacing: 1px;
             text-shadow: 0px 4px 15px rgba(0,0,0,0.8);
         }
-
         p.subtitle {
             font-weight: 300;
             font-size: 1.2em;
@@ -74,8 +64,6 @@
             letter-spacing: 2px;
             text-shadow: 0px 2px 10px rgba(0,0,0,0.8);
         }
-
-        /* Sektionen-Boxen (Glassmorphism-Effekt) */
         .section {
             background: rgba(15, 15, 20, 0.65);
             backdrop-filter: blur(12px);
@@ -88,7 +76,6 @@
             width: 100%;
             box-sizing: border-box;
         }
-
         .section h2 {
             margin-top: 0;
             margin-bottom: 25px;
@@ -101,15 +88,11 @@
             text-transform: uppercase;
             letter-spacing: 3px;
         }
-
-        /* Button-Raster */
         .button-grid {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
-
-        /* Die interaktiven Buttons */
         .link-button {
             display: flex;
             align-items: center;
@@ -121,15 +104,12 @@
             transition: all 0.4s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
         .link-button:hover {
             background: rgba(255, 255, 255, 0.15);
             transform: translateY(-3px);
             border-color: rgba(0, 229, 255, 0.5);
             box-shadow: 0 8px 20px rgba(0, 229, 255, 0.2);
         }
-
-        /* Klasse für runde Künstler- und Profilbilder */
         .img-round {
             width: 50px;
             height: 50px;
@@ -139,8 +119,6 @@
             margin-right: 20px;
             flex-shrink: 0;
         }
-
-        /* Klasse für breite Plattform-Logos (Spotify, Apple Music, YouTube) */
         .img-wide {
             height: 32px;
             width: auto;
@@ -149,26 +127,21 @@
             margin-right: 20px;
             flex-shrink: 0;
         }
-
         .link-text {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
-
         .link-title {
             font-weight: 600;
             font-size: 1.1em;
             margin-bottom: 3px;
         }
-
         .link-desc {
             font-weight: 300;
             font-size: 0.85em;
             color: #cbd5e1;
         }
-
-        /* Impressum ganz unten */
         .footer {
             margin-top: 20px;
             font-weight: 300;
@@ -177,7 +150,6 @@
             text-align: center;
             line-height: 1.6;
         }
-
         .footer a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
@@ -189,19 +161,24 @@
     <div class="overlay">
         <div class="container">
             
-            <!-- AVATAR BILD -->
-            <img src="murph.jpg" alt="Murphy" class="profile-avatar">
+            <img src="Rap.png" alt="Murphy" class="profile-avatar">
 
-            <!-- KOPFBEREICH -->
             <h1>MURPHY'S KI-MUSIK</h1>
             <p class="subtitle">NEXT LEVEL</p>
 
-            <!-- MUSIK SEKTION -->
             <div class="section">
-                <h2>🎵 Meine Musikwelten</h2>
+                <h2>✨ Meine Musikwelten</h2>
                 <div class="button-grid">
                     
-                    <!-- Murphy & The Ziggys (Spotify) -->
+                    <!-- Playlist-Button mit neuer, bildstarker Beschreibung -->
+                    <a href="playlists.html" class="link-button">
+                        <img src="Logo_Murphy_und_Ziggys_rund.png" class="img-round" alt="Murphy and the Ziggys">
+                        <div class="link-text">
+                            <span class="link-title">Murphy and the Ziggys Playlists</span>
+                            <span class="link-desc">Murphys kreative Musikwelten – alle Alben, Sound-Experimente & hochwertige KI-Kunst</span>
+                        </div>
+                    </a>
+
                     <a href="https://open.spotify.com/intl-de/artist/1DnjGcZxZzxjtpQvjeErGi" target="_blank" class="link-button">
                         <img src="Spotify_Full_Logo_RGB_Green.png" class="img-wide" alt="Spotify">
                         <div class="link-text">
@@ -210,7 +187,6 @@
                         </div>
                     </a>
 
-                    <!-- Murphy & The Ziggys (Apple Music) -->
                     <a href="https://music.apple.com/us/artist/murphy-the-ziggys/1837896994" target="_blank" class="link-button">
                         <img src="DE_Apple_Music_Listen_on_Badge_RGB_083120.svg" class="img-wide" alt="Apple Music">
                         <div class="link-text">
@@ -218,8 +194,15 @@
                             <span class="link-desc">Künstlerprofil (Apple Music)</span>
                         </div>
                     </a>
+					
+                    <a href="https://music.youtube.com/channel/UCiNaJy7pScb2UhJXYNrQ5og" target="_blank" class="link-button">
+                        <img src="yt_logo_fullcolor_white_digital.png" class="img-wide" alt="YouTube Music">
+                        <div class="link-text">
+                            <span class="link-title">The Ziggys - Topic</span>
+                            <span class="link-desc">Murphys Youtube-Musik-Kanal</span>
+                        </div>
+                    </a>
 
-                    <!-- Cyrus Protocol (Spotify) -->
                     <a href="https://open.spotify.com/intl-de/artist/2ToGIFnYhiMPeODjZAumJr" target="_blank" class="link-button">
                         <img src="Spotify_Full_Logo_RGB_Green.png" class="img-wide" alt="Spotify">
                         <div class="link-text">
@@ -228,7 +211,6 @@
                         </div>
                     </a>
 
-                    <!-- Cyrus Protocol (Apple Music) -->
                     <a href="https://music.apple.com/us/artist/the-cyrus-protocol/1875877240" target="_blank" class="link-button">
                         <img src="DE_Apple_Music_Listen_on_Badge_RGB_083120.svg" class="img-wide" alt="Apple Music">
                         <div class="link-text">
@@ -237,54 +219,32 @@
                         </div>
                     </a>
 
-                    <!-- Murphy and the Ziggys Playlists (YouTube) -->
-                    <a href="https://www.youtube.com/@The_Ziggys/playlists" target="_blank" class="link-button">
-                        <img src="Logo_Murphy_und_Ziggys_rund.png" class="img-round" alt="Murphy and the Ziggys">
-                        <div class="link-text">
-                            <span class="link-title">Murphy and the Ziggys Playlists</span>
-                            <span class="link-desc">Ungefilterte Sounds & Projekte (YouTube)</span>
-                        </div>
-                    </a>
-
-                    <!-- Offizieller YT Kanal Ziggys -->
-                    <a href="https://www.youtube.com/channel/UCiNaJy7pScb2UhJXYNrQ5og" target="_blank" class="link-button">
-                        <img src="yt_logo_fullcolor_white_digital.png" class="img-wide" alt="YouTube">
-                        <div class="link-text">
-                            <span class="link-title">The Ziggys - Topic</span>
-                            <span class="link-desc">Offizielle Releases (YouTube)</span>
-                        </div>
-                    </a>
-
-                    <!-- Offizieller YT Kanal Cyrus Protocol -->
-                    <a href="https://www.youtube.com/channel/UCqf8dz_b0GHA1HkWCcha2MA" target="_blank" class="link-button">
-                        <img src="yt_logo_fullcolor_white_digital.png" class="img-wide" alt="YouTube">
+                    <a href="https://music.youtube.com/channel/UCqf8dz_b0GHA1HkWCcha2MA" target="_blank" class="link-button">
+                        <img src="yt_logo_fullcolor_white_digital.png" class="img-wide" alt="YouTube Music">
                         <div class="link-text">
                             <span class="link-title">Cyrus Protocol - Topic</span>
-                            <span class="link-desc">Offizielle Releases (YouTube)</span>
+                            <span class="link-desc">Offizielle Releases (YouTube Music)</span>
                         </div>
                     </a>
 
                 </div>
             </div>
 
-            <!-- KI & TUTORIALS SEKTION -->
             <div class="section">
                 <h2>🧠 KI-Wissen & ComfyUI</h2>
                 <div class="button-grid">
                     
-                    <!-- Tutorial Kanal -->
                     <a href="https://www.youtube.com/@murphylanga" target="_blank" class="link-button">
                         <img src="Logo_Murphylanga_rund.png" class="img-round" alt="YouTube Tutorials">
                         <div class="link-text">
                             <span class="link-title">Murphy Langa (Tutorials)</span>
-                            <span class="link-desc">Lerne KI-Musik & ComfyUI mit mir</span>
+                            <span class="link-desc">Murphys KI Tutorial Kanal</span>
                         </div>
                     </a>
-
+                    
                 </div>
             </div>
 
-            <!-- IMPRESSUM -->
             <div class="footer">
                 <strong>Impressum</strong><br>
                 Helmut Mrfka<br>
