@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Murphy & The Ziggys - Playlists</title>
+    <title>Murphy & The Ziggys - Experimente & Playlists</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
-            background-image: url('Hintergrund.jpg'); /* Nimmt dasselbe Hintergrundbild */
+            background-image: url('Hintergrund.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -20,7 +20,7 @@
             min-height: 100vh;
         }
         .overlay {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.45);
             min-height: 100vh;
             width: 100%;
             display: flex;
@@ -37,8 +37,6 @@
             flex-direction: column;
             align-items: center;
         }
-        
-        /* Der Zurück-Button ganz oben */
         .back-link {
             align-self: flex-start;
             color: rgba(255, 255, 255, 0.7);
@@ -51,7 +49,7 @@
             transition: color 0.3s ease;
         }
         .back-link:hover {
-            color: #00e5ff;
+            color: #00ff88;
         }
 
         h1 {
@@ -65,10 +63,10 @@
         }
         p.subtitle {
             font-weight: 300;
-            font-size: 1.1em;
+            font-size: 1.05em;
             color: #e2e8f0;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             letter-spacing: 2px;
             text-shadow: 0px 2px 10px rgba(0,0,0,0.8);
         }
@@ -78,63 +76,89 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 20px;
-            padding: 30px;
+            padding: 25px;
             margin-bottom: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             width: 100%;
             box-sizing: border-box;
         }
-        .button-grid {
+        
+        .playlist-card {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
         }
-        .link-button {
+        .playlist-card:hover {
+            border-color: rgba(0, 255, 136, 0.5);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .card-header {
             display: flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.05);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 15px 20px;
-            border-radius: 12px;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 12px;
         }
-        .link-button:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-3px);
-            border-color: rgba(0, 229, 255, 0.5);
-            box-shadow: 0 8px 20px rgba(0, 229, 255, 0.2);
-        }
-        
-        /* Albumcover-Optik (Quadratisch mit runden Ecken statt ganz rund) */
+
         .img-playlist {
             width: 60px;
             height: 60px;
-            border-radius: 12px;
+            border-radius: 10px;
             object-fit: cover;
             box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            margin-right: 20px;
+            margin-right: 15px;
             flex-shrink: 0;
             background-color: rgba(255, 255, 255, 0.1);
         }
-        
-        .link-text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
+
         .link-title {
             font-weight: 600;
             font-size: 1.05em;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
             line-height: 1.3;
         }
         .link-desc {
             font-weight: 300;
-            font-size: 0.85em;
+            font-size: 0.82em;
             color: #cbd5e1;
-            margin-top: 4px;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        .action-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.2s ease;
+        }
+        .action-btn:hover {
+            background: rgba(0, 255, 136, 0.2);
+            border-color: rgba(0, 255, 136, 0.5);
+            transform: translateY(-2px);
+        }
+        .action-btn.yt-music {
+            background: rgba(255, 0, 0, 0.2);
+            border-color: rgba(255, 0, 0, 0.4);
+        }
+        .action-btn.yt-music:hover {
+            background: rgba(255, 0, 0, 0.4);
+            border-color: rgba(255, 0, 0, 0.7);
         }
     </style>
 </head>
@@ -146,108 +170,178 @@
             <a href="index.html" class="back-link">← Zurück zur Hauptseite</a>
 
             <h1>MURPHY & THE ZIGGYS</h1>
-            <p class="subtitle">YOUTUBE PLAYLISTS</p>
+            <p class="subtitle">EXPERIMENTE & PLAYLISTS<br><small style="font-size:0.7em; opacity:0.8;">Wähle deinen Player: Video oder Direkt in die Musik-App fürs Auto/Handy</small></p>
 
             <div class="section">
-                <div class="button-grid">
-				
-                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7KBcTTdBMyqRhQJ_xVTgyB" target="_blank" class="link-button">
-                        <img src="Musikful.jpg" class="img-playlist" alt="Musikful">
-                        <div class="link-text">
-                            <span class="link-title">Musicful Full Songs</span>
-                            <span class="link-desc">Auf YouTube anhören</span>
+                
+                <div class="playlist-card">
+                    <div class="card-header">
+                        <img src="Musikful.jpg" class="img-playlist" alt="Musicful">
+                        <div>
+                            <div class="link-title">Musicful Full Songs</div>
+                            <div class="link-desc">Vollständige Tracks & KI-Kreativität</div>
                         </div>
-                    </a>
-					
-					<a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX5hMctCMWQRdY_UiLtv6t6Y" target="_blank" class="link-button">
-                        <img src="AI_Vibes.jpg" class="img-playlist" alt="AI Vibes">
-                        <div class="link-text">
-                            <span class="link-title">Personal Stories Turned into Music Genre Mix</span>
-                            <span class="link-desc">Auf YouTube anhören</span>
-                        </div>
-                    </a>
-					
-					<a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7d8nY9k8F6HA68IKOIuQxV" target="_blank" class="link-button">
-						<img src="Groove.jpg" class="img-playlist" alt="Groove">
-						<div class="link-text">
-							<span class="link-title">From Vinyl to Code: AI Rediscovers Funk & Soul</span>
-							<span class="link-desc">Auf YouTube anhören</span>
-                        </div>
-                    </a>
-				
-				    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7TAhH9xQjeYV988Gp8sfda" target="_blank" class="link-button">
-                        <img src="Ziggy.jpg" class="img-playlist" alt="Song">
-                        <div class="link-text">
-                            <span class="link-title">INDIE WIDE OPEN: Von Singer-Songwriter zu Rock, Pop & Jazz</span>
-                            <span class="link-desc">Auf YouTube anhören</span>
-                        </div>
-                    </a>
-					
-                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX4Wlnz81334qYZgStYXKlhk" target="_blank" class="link-button">
-                        <img src="Love.jpg" class="img-playlist" alt="Love">
-                        <div class="link-text">
-                            <span class="link-title">The Love & Groove Protocol: Indie, Soul & Funk</span>
-                            <span class="link-desc">Auf YouTube anhören</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX74ighjx7ozblM54GyB6uUR" target="_blank" class="link-button">
-                        <img src="Rock.jpg" class="img-playlist" alt="Rock">
-                        <div class="link-text">
-                            <span class="link-title">Rock Without Borders: From Soft Ballads to Trash Metal 🇩🇪🇬🇧</span>
-                            <span class="link-desc">Auf YouTube anhören</span>
-                        </div>
-                    </a>
-					
-					                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX6tx4yv92BnFvRskfdFRo_T" target="_blank" class="link-button">
-                        <img src="Rap.jpg" class="img-playlist" alt="Rap">
-                        <div class="link-text">
-                            <span class="link-title">ARK CINEMATIC RAP</span>
-                            <span class="link-desc">Auf YouTube anhören</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7i-NCphIEpzeQGOUra9TvJ" target="_blank" class="link-button">
-                        <img src="no_skip.jpg" class="img-playlist" alt="No Skip">
-                        <div class="link-text">
-                            <span class="link-title">No Skip. Deep Drive.</span>
-                            <span class="link-desc">Auf YouTube anhören</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX4yw_4NmQfdISolWDoZKlbX" target="_blank" class="link-button">
-                        <img src="papa.jpg" class="img-playlist" alt="Papa">
-                        <div class="link-text">
-                            <span class="link-title">Dad’s Playlist – Musik kennt kein Alter</span>
-                            <span class="link-desc">Auf YouTube anhören</span>
-                        </div>
-                    </a>
-							
-                    <a href="https://www.youtube.com/playlist?list=PLGcXQnapfUhg" target="_blank" class="link-button">
-                        <img src="AI_Reggae.jpg" class="img-playlist" alt="Experiment">
-                        <div class="link-text">
-                            <span class="link-title">Island Riddims & Franggn Dub 💨 The Ultimate AI Reggae </span>
-                            <span class="link-desc">Auf YouTube anhören</span>
-                        </div>
-                    </a>
-					
-					<a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7a7LoEgqkJdWPJiYqpdfGI" target="_blank" class="link-button">
-                        <img src="Hintergrund.jpg" class="img-playlist" alt="Experiment">
-                        <div class="link-text">
-                            <span class="link-title">Jenseits der Vorstellung: Das ultimative KI-Experiment</span>
-                            <span class="link-desc">Auf YouTube anhören</span>
-                        </div>
-                    </a>
-					
-                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX6NkGEuW7RonKX-1whgPqoA" target="_blank" class="link-button">
-                        <img src="Christmas.jpg" class="img-playlist" alt="Christmas">
-                        <div class="link-text">
-                            <span class="link-title">Murphy & The Ziggys Christmas</span>
-                            <span class="link-desc">Auf YouTube anhören</span>
-                        </div>
-                    </a>
-
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7KBcTTdBMyqRhQJ_xVTgyB" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX7KBcTTdBMyqRhQJ_xVTgyB" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                    </div>
                 </div>
+
+                <div class="playlist-card">
+                    <div class="card-header">
+                        <img src="AI_Vibes.jpg" class="img-playlist" alt="AI Vibes">
+                        <div>
+                            <div class="link-title">Personal Stories Turned into Music Genre Mix</div>
+                            <div class="link-desc">Persönliche Geschichten musikalisch übersetzt</div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX5hMctCMWQRdY_UiLtv6t6Y" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX5hMctCMWQRdY_UiLtv6t6Y" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-header">
+                        <img src="Groove.jpg" class="img-playlist" alt="Groove">
+                        <div>
+                            <div class="link-title">From Vinyl to Code: Funk & Soul</div>
+                            <div class="link-desc">Echte Retro-Vibes neu gecodet</div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7d8nY9k8F6HA68IKOIuQxV" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX7d8nY9k8F6HA68IKOIuQxV" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-header">
+                        <img src="Ziggy.jpg" class="img-playlist" alt="Song">
+                        <div>
+                            <div class="link-title">INDIE WIDE OPEN</div>
+                            <div class="link-desc">Von Singer-Songwriter zu Rock, Pop & Jazz</div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7TAhH9xQjeYV988Gp8sfda" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX7TAhH9xQjeYV988Gp8sfda" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-header">
+                        <img src="Love.jpg" class="img-playlist" alt="Love">
+                        <div>
+                            <div class="link-title">The Love & Groove Protocol</div>
+                            <div class="link-desc">Indie, Soul & Funk Mix</div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX4Wlnz81334qYZgStYXKlhk" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX4Wlnz81334qYZgStYXKlhk" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-header">
+                        <img src="Rock.jpg" class="img-playlist" alt="Rock">
+                        <div>
+                            <div class="link-title">Rock Without Borders</div>
+                            <div class="link-desc">From Soft Ballads to Trash Metal 🇩🇪🇬🇧</div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX74ighjx7ozblM54GyB6uUR" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX74ighjx7ozblM54GyB6uUR" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-header">
+                        <img src="Rap.jpg" class="img-playlist" alt="Rap">
+                        <div>
+                            <div class="link-title">ARK CINEMATIC RAP</div>
+                            <div class="link-desc">Epitome of Cinematic Hip-Hop</div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX6tx4yv92BnFvRskfdFRo_T" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX6tx4yv92BnFvRskfdFRo_T" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-header">
+                        <img src="no_skip.jpg" class="img-playlist" alt="No Skip">
+                        <div>
+                            <div class="link-title">No Skip. Deep Drive.</div>
+                            <div class="link-desc">Perfekt zum Autofahren & Durchhören</div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7i-NCphIEpzeQGOUra9TvJ" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX7i-NCphIEpzeQGOUra9TvJ" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-header">
+                        <img src="papa.jpg" class="img-playlist" alt="Papa">
+                        <div>
+                            <div class="link-title">Dad’s Playlist – Musik kennt kein Alter</div>
+                            <div class="link-desc">Generationsübergreifende Sounds</div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX4yw_4NmQfdISolWDoZKlbX" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX4yw_4NmQfdISolWDoZKlbX" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-header">
+                        <img src="AI_Reggae.jpg" class="img-playlist" alt="Experiment">
+                        <div>
+                            <div class="link-title">Island Riddims & Franggn Dub 💨 The Ultimate AI Reggae</div>
+                            <div class="link-desc">Bayerisch-Karibische Reggae Experimente</div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://www.youtube.com/playlist?list=PLGcXQnapfUhg" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://music.youtube.com/playlist?list=PLGcXQnapfUhg" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-header">
+                        <img src="Hintergrund.jpg" class="img-playlist" alt="Experiment">
+                        <div>
+                            <div class="link-title">Jenseits der Vorstellung: Das ultimative KI-Experiment</div>
+                            <div class="link-desc">Grenzbereiche der KI-Musikgestaltung</div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7a7LoEgqkJdWPJiYqpdfGI" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX7a7LoEgqkJdWPJiYqpdfGI" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-header">
+                        <img src="Christmas.jpg" class="img-playlist" alt="Christmas">
+                        <div>
+                            <div class="link-title">Murphy & The Ziggys Christmas</div>
+                            <div class="link-desc">Besondere Weihnachts-KI-Songs</div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX6NkGEuW7RonKX-1whgPqoA" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX6NkGEuW7RonKX-1whgPqoA" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
