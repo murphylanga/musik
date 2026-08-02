@@ -286,6 +286,12 @@
             border-bottom: 1px dashed rgba(255,255,255,0.4);
             padding-bottom: 2px;
         }
+			/* Fix für das LAB-Badge: Greift jetzt auch auf mittleren Bildschirmgrößen */
+			@media (max-width: 680px) {
+			 .featured-lab {
+			padding-top: 50px !important; /* Schafft oben Platz für das Badge */
+		}
+}
     </style>
 </head>
 <body>
