@@ -7,6 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             margin: 0;
             padding: 0;
@@ -205,16 +208,59 @@
             font-size: 0.85em;
             color: #cbd5e1;
         }
-        .scroll-hint {
-            font-size: 0.85em;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 25px;
+        .algorithm-hint {
+            background: rgba(0, 255, 136, 0.07);
+            border: 1.5px solid rgba(0, 255, 136, 0.4);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 5px;
+            font-size: 0.88em;
+            line-height: 1.5;
+            color: #e2e8f0;
             text-align: center;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 8px 18px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
         }
+        .algorithm-hint .hint-header {
+            font-weight: 800;
+            font-size: 1.05em;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .algorithm-hint strong {
+            color: #00ff88;
+        }
+		/* Fiery Amber / Orange Glow Scroll Button */
+		.scroll-callout-btn {
+			display: block;
+			margin-top: 18px;
+			background: linear-gradient(135deg, rgba(255, 154, 0, 0.25), rgba(255, 75, 0, 0.15));
+			border: 1.5px solid #ff9d00;
+			border-radius: 12px;
+			padding: 14px 18px;
+			font-weight: 700;
+			color: #ffffff;
+			font-size: 0.95em;
+			text-decoration: none;
+			box-shadow: 0 0 22px rgba(255, 140, 0, 0.45);
+			letter-spacing: 0.5px;
+			transition: all 0.3s ease;
+			text-align: center;
+		}
+		.scroll-callout-btn:hover {
+			background: linear-gradient(135deg, rgba(255, 165, 0, 0.45), rgba(255, 90, 0, 0.3));
+			border-color: #ffb700;
+			box-shadow: 0 0 32px rgba(255, 140, 0, 0.85), inset 0 0 12px rgba(255, 165, 0, 0.35);
+			transform: translateY(-3px) scale(1.01);
+			color: #ffffff;
+		}
+		.scroll-callout-btn span {
+			color: #ffaa00;
+			text-decoration: underline;
+			text-underline-offset: 3px;
+		}
+		.scroll-callout-btn:hover span {
+			color: #ffd000;
+		}
         .footer-nav {
             margin-top: 15px;
             text-align: center;
@@ -227,10 +273,6 @@
             transition: color 0.3s;
             border-bottom: 1px dashed rgba(255,255,255,0.4);
             padding-bottom: 2px;
-        }
-        .footer-nav a:hover {
-            color: #00ff88;
-            border-color: #00ff88;
         }
     </style>
 </head>
@@ -250,10 +292,6 @@
             <h1>MURPHY LANGA</h1>
             <p class="subtitle">CREATIVE AI • MUSIC • TUTORIALS • CONSULTING</p>
 
-            <div class="scroll-hint">
-                👇 Scroll nach unten für ComfyUI-Tutorials & maßgeschneiderte Musikprojekte
-            </div>
-
             <div class="section">
                 <h2>🎵 KI-Musik & Releases</h2>
                 <div class="button-grid">
@@ -267,11 +305,21 @@
                         </div>
                     </a>
 
+                    <div class="algorithm-hint">
+                        <div class="hint-header">✨ Murphy & die KI-Crew freuen sich auf deine Unterstützung! 💕</div>
+                        Die Lyrics, Sound- und Bild-Prompts sind original von Murphy ausgedacht, entwickelt und optimiert. Unsere virtuelle KI-Crew erweckt sie anschließend mit verschiedenen Tools und Modellen zum Leben.<br><br>
+                        <strong>Gefällt dir, was du hörst?</strong> Lass uns super gerne ein Like oder einen Kommentar auf den Plattformen da! Wir lesen wirklich jede einzelne Nachricht. Und seien wir ehrlich: Ohne deine Interaktion ignoriert uns der sture Algorithmus heutzutage komplett... 😉❤️
+
+                        <a href="#tutorials" class="scroll-callout-btn">
+                            👇 Scroll nach unten für <span>ComfyUI-Tutorials</span> & <span>maßgeschneiderte Musikprojekte für dich</span>
+                        </a>
+                    </div>
+
                     <a href="https://open.spotify.com/intl-de/artist/1DnjGcZxZzxjtpQvjeErGi" target="_blank" class="link-button">
                         <img src="Spotify_Full_Logo_RGB_Green.png" class="img-wide" alt="Spotify">
                         <div class="link-text">
                             <span class="link-title">Murphy & The Ziggys</span>
-                            <span class="link-desc">Künstlerprofil (Spotify)</span>
+                            <span class="link-desc">Indie Pop & Rock • Künstlerprofil (Spotify)</span>
                         </div>
                     </a>
 
@@ -279,46 +327,46 @@
                         <img src="DE_Apple_Music_Listen_on_Badge_RGB_083120.svg" class="img-wide" alt="Apple Music">
                         <div class="link-text">
                             <span class="link-title">Murphy & The Ziggys</span>
-                            <span class="link-desc">Künstlerprofil (Apple Music)</span>
+                            <span class="link-desc">Indie Pop & Rock • Künstlerprofil (Apple Music)</span>
                         </div>
                     </a>
 					
                     <a href="https://music.youtube.com/channel/UCiNaJy7pScb2UhJXYNrQ5og" target="_blank" class="link-button">
                         <img src="yt_logo_fullcolor_white_digital.png" class="img-wide" alt="YouTube Music">
                         <div class="link-text">
-                            <span class="link-title">The Ziggys - Topic</span>
-                            <span class="link-desc">Murphys Youtube-Musik-Kanal</span>
+                            <span class="link-title">The Ziggys</span>
+                            <span class="link-desc">Indie Pop & Rock • Künstlerprofil (YouTube Music)</span>
                         </div>
                     </a>
 
                     <a href="https://open.spotify.com/intl-de/artist/2ToGIFnYhiMPeODjZAumJr" target="_blank" class="link-button">
                         <img src="Spotify_Full_Logo_RGB_Green.png" class="img-wide" alt="Spotify">
                         <div class="link-text">
-                            <span class="link-title">Cyrus Protocol</span>
-                            <span class="link-desc">Soul & Funk Experiments (Spotify)</span>
+                            <span class="link-title">The Cyrus Protocol</span>
+                            <span class="link-desc">Soul & Funk • Künstlerprofil (Spotify)</span>
                         </div>
                     </a>
 
                     <a href="https://music.apple.com/us/artist/the-cyrus-protocol/1875877240" target="_blank" class="link-button">
                         <img src="DE_Apple_Music_Listen_on_Badge_RGB_083120.svg" class="img-wide" alt="Apple Music">
                         <div class="link-text">
-                            <span class="link-title">Cyrus Protocol</span>
-                            <span class="link-desc">Soul & Funk Experiments (Apple Music)</span>
+                            <span class="link-title">The Cyrus Protocol</span>
+                            <span class="link-desc">Soul & Funk • Künstlerprofil (Apple Music)</span>
                         </div>
                     </a>
 
                     <a href="https://music.youtube.com/channel/UCqf8dz_b0GHA1HkWCcha2MA" target="_blank" class="link-button">
                         <img src="yt_logo_fullcolor_white_digital.png" class="img-wide" alt="YouTube Music">
                         <div class="link-text">
-                            <span class="link-title">Cyrus Protocol - Topic</span>
-                            <span class="link-desc">Offizielle Releases (YouTube Music)</span>
+                            <span class="link-title">The Cyrus Protocol</span>
+                            <span class="link-desc">Soul & Funk • Künstlerprofil (YouTube Music)</span>
                         </div>
                     </a>
 
                 </div>
             </div>
 
-            <div class="section">
+            <div class="section" id="tutorials">
                 <h2>🧠 KI-Knowledge & Tutorials</h2>
                 <div class="button-grid">
                     

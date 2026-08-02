@@ -64,7 +64,7 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9em;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
             transition: color 0.3s ease;
@@ -98,18 +98,38 @@
             font-size: 2.2em;
             text-align: center;
             margin-top: 0;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             letter-spacing: 1px;
             text-shadow: 0px 4px 15px rgba(0,0,0,0.8);
         }
-        p.subtitle {
-            font-weight: 300;
-            font-size: 1.05em;
-            color: #e2e8f0;
+        .genre-banner {
+            background: rgba(15, 15, 20, 0.75);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 136, 0.4);
+            border-radius: 16px;
+            padding: 14px 20px;
+            margin-bottom: 30px;
             text-align: center;
-            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .genre-banner-title {
+            font-weight: 800;
+            font-size: 1.1em;
+            color: #00ff88;
             letter-spacing: 2px;
-            text-shadow: 0px 2px 10px rgba(0,0,0,0.8);
+            margin-bottom: 6px;
+        }
+        .genre-banner-text {
+            font-size: 0.92em;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+        .genre-banner-text span {
+            color: #00ff88;
+            font-weight: 600;
         }
         .section {
             background: rgba(15, 15, 20, 0.65);
@@ -122,6 +142,21 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             width: 100%;
             box-sizing: border-box;
+        }
+        .algorithm-hint {
+            background: rgba(0, 255, 136, 0.08);
+            border: 1px solid rgba(0, 255, 136, 0.35);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin-bottom: 25px;
+            font-size: 0.88em;
+            line-height: 1.5;
+            color: #e2e8f0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .algorithm-hint strong {
+            color: #00ff88;
         }
         .playlist-card {
             display: flex;
@@ -211,10 +246,22 @@
             <a href="index-de.html" class="back-link">← Zurück zur Hauptseite</a>
 
             <h1>MURPHY & THE ZIGGYS</h1>
-            <p class="subtitle">EXPERIMENTE & PLAYLISTS<br><small style="font-size:0.7em; opacity:0.8;">Wähle deinen Player: Video oder Direkt in die Musik-App fürs Auto/Handy</small></p>
+            
+            <div class="genre-banner">
+                <div class="genre-banner-title">EXPERIMENTE & PLAYLISTS</div>
+                <div class="genre-banner-text">
+                    Von <span>Jazz & Klassik</span> über <span>Rock, Soul & Reggae</span> bis hin zu <span>traditioneller Blasmusik</span> – Das KI-Musiklabor ohne Grenzen 🎺✨
+                </div>
+            </div>
 
             <div class="section">
                 
+                <div class="algorithm-hint">
+                    🧪 <strong>Willkommen im KI-Genre-Labor! 🎺✨👌</strong><br>
+                    Hier trifft menschliche Kreativität auf unbegrenzte Sound-Welten: Murphy schreibt die Lyrics und Prompts, während unsere KI-Crew die unterschiedlichsten Stilrichtungen umsetzt.<br><br>
+                    <strong>Hast du Musikwünsche, Ideen für ein neues Genre oder Feedback?</strong> Hinterlasse uns unbedingt ein <strong>Like oder einen Kommentar</strong> auf den Plattformen – <strong>wir lesen wirklich alles!</strong> Und ganz nebenbei hilfst du uns, dem sturen Algorithmus Beine zu machen. 👍❤️
+                </div>
+
                 <div class="playlist-card">
                     <div class="card-header">
                         <img src="Musikful.jpg" class="img-playlist" alt="Musicful">
@@ -224,7 +271,7 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7KBcTTdBMyqRhQJ_xVTgyB" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7KBcTTdBMyqRhQJ_xVTgyB" target="_blank" class="action-btn">▶ YouTube</a>
                         <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX7KBcTTdBMyqRhQJ_xVTgyB" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
                     </div>
                 </div>
@@ -238,7 +285,7 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX5hMctCMWQRdY_UiLtv6t6Y" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX5hMctCMWQRdY_UiLtv6t6Y" target="_blank" class="action-btn">▶ YouTube</a>
                         <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX5hMctCMWQRdY_UiLtv6t6Y" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
                     </div>
                 </div>
@@ -252,7 +299,7 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7d8nY9k8F6HA68IKOIuQxV" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7d8nY9k8F6HA68IKOIuQxV" target="_blank" class="action-btn">▶ YouTube</a>
                         <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX7d8nY9k8F6HA68IKOIuQxV" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
                     </div>
                 </div>
@@ -266,7 +313,7 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7TAhH9xQjeYV988Gp8sfda" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7TAhH9xQjeYV988Gp8sfda" target="_blank" class="action-btn">▶ YouTube</a>
                         <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX7TAhH9xQjeYV988Gp8sfda" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
                     </div>
                 </div>
@@ -280,7 +327,7 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX4Wlnz81334qYZgStYXKlhk" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX4Wlnz81334qYZgStYXKlhk" target="_blank" class="action-btn">▶ YouTube</a>
                         <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX4Wlnz81334qYZgStYXKlhk" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
                     </div>
                 </div>
@@ -294,7 +341,7 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX74ighjx7ozblM54GyB6uUR" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX74ighjx7ozblM54GyB6uUR" target="_blank" class="action-btn">▶ YouTube</a>
                         <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX74ighjx7ozblM54GyB6uUR" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
                     </div>
                 </div>
@@ -308,7 +355,7 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX6tx4yv92BnFvRskfdFRo_T" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX6tx4yv92BnFvRskfdFRo_T" target="_blank" class="action-btn">▶ YouTube</a>
                         <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX6tx4yv92BnFvRskfdFRo_T" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
                     </div>
                 </div>
@@ -322,7 +369,7 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7i-NCphIEpzeQGOUra9TvJ" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7i-NCphIEpzeQGOUra9TvJ" target="_blank" class="action-btn">▶ YouTube</a>
                         <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX7i-NCphIEpzeQGOUra9TvJ" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
                     </div>
                 </div>
@@ -336,7 +383,7 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX4yw_4NmQfdISolWDoZKlbX" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX4yw_4NmQfdISolWDoZKlbX" target="_blank" class="action-btn">▶ YouTube</a>
                         <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX4yw_4NmQfdISolWDoZKlbX" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
                     </div>
                 </div>
@@ -350,7 +397,7 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://www.youtube.com/playlist?list=PLGcXQnapfUhg" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://www.youtube.com/playlist?list=PLGcXQnapfUhg" target="_blank" class="action-btn">▶ YouTube</a>
                         <a href="https://music.youtube.com/playlist?list=PLGcXQnapfUhg" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
                     </div>
                 </div>
@@ -364,7 +411,7 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7a7LoEgqkJdWPJiYqpdfGI" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7a7LoEgqkJdWPJiYqpdfGI" target="_blank" class="action-btn">▶ YouTube</a>
                         <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX7a7LoEgqkJdWPJiYqpdfGI" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
                     </div>
                 </div>
@@ -378,15 +425,18 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX6NkGEuW7RonKX-1whgPqoA" target="_blank" class="action-btn">▶ YouTube Video</a>
+                        <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX6NkGEuW7RonKX-1whgPqoA" target="_blank" class="action-btn">▶ YouTube</a>
                         <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX6NkGEuW7RonKX-1whgPqoA" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Zurückbutton unten -->
             <a href="index-de.html" class="back-btn-bottom">← Zurück zur Hauptseite</a>
+            
+            <div style="font-size: 0.75em; color: rgba(255, 255, 255, 0.3); margin-top: 10px; letter-spacing: 1px; text-align: center;">
+                Made with ❤️ by Murphy Langa
+            </div>
 
         </div>
     </div>
