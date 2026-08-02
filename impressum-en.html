@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprint & Consulting Services - Murphy Langa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-image: url('Hintergrund.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.45);
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 650px;
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header-section {
+            text-align: center;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .lang-switch-prominent {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            background: rgba(15, 15, 20, 0.75);
+            backdrop-filter: blur(10px);
+            padding: 6px 16px;
+            border-radius: 25px;
+            border: 2px solid rgba(0, 255, 136, 0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .lang-btn {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95em;
+            font-weight: 800;
+            opacity: 0.5;
+            letter-spacing: 1px;
+            padding: 2px 8px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        .lang-btn.active {
+            opacity: 1;
+            color: #000000;
+            background: #00ff88;
+        }
+        .lang-btn:hover:not(.active) {
+            opacity: 0.9;
+            color: #00ff88;
+        }
+        .lang-divider {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        h1 {
+            font-weight: 800;
+            font-size: 2em;
+            margin-top: 0;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+            text-shadow: 0px 4px 15px rgba(0,0,0,0.8);
+        }
+        p.subtitle {
+            font-weight: 400;
+            font-size: 0.95em;
+            color: #00ff88;
+            margin-top: 0;
+            letter-spacing: 1.5px;
+        }
+        .section {
+            background: rgba(15, 15, 20, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .section h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-size: 1.15em;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .legal-text {
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+        .legal-text strong {
+            color: #ffffff;
+        }
+        .legal-text a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+        .legal-text a:hover {
+            text-decoration: underline;
+        }
+        .service-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 15px 0;
+        }
+        .service-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 0.92em;
+            line-height: 1.5;
+            color: #e2e8f0;
+        }
+        .service-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #00ff88;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+        .back-button:hover {
+            background: rgba(0, 255, 136, 0.2);
+            border-color: #00ff88;
+            color: #00ff88;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        <div class="container">
+
+            <div class="header-section">
+                <h1>MURPHY LANGA</h1>
+                <p class="subtitle">LEGAL NOTICE & CONSULTING SERVICES</p>
+
+                <div class="lang-switch-prominent">
+                    <a href="impressum-en.html" class="lang-btn active">EN</a>
+                    <span class="lang-divider">|</span>
+                    <a href="impressum-de.html" class="lang-btn">DE</a>
+                </div>
+            </div>
+
+            <!-- SERVICES SECTION -->
+            <div class="section" style="border-color: rgba(0, 255, 136, 0.4);">
+                <h2>🚀 Custom Music & Consulting Services</h2>
+                <div class="legal-text">
+                    Looking for customized generative AI solutions or unique music productions? I offer:
+                    
+                    <ul class="service-list">
+                        <li><strong>Personalized Custom Songs:</strong> A unique song created specifically for you or as an unforgettable gift (birthday, anniversary, special events).</li>
+                        <li><strong>Custom AI Music & Visuals:</strong> Exclusive tailored tracks and animated visuals for brands, creators, and commercial media.</li>
+                        <li><strong>ComfyUI Training & Workflows:</strong> 1-on-1 coaching, custom workflow building, and integration for image & video generation.</li>
+                        <li><strong>Generative AI Consulting:</strong> Strategic advice on creative AI pipelines, tools, and technical implementation.</li>
+                    </ul>
+
+                    Interested in working together? Reach out via email: <br>
+                    📧 <strong><a href="mailto:murphylanga@web.de">murphylanga@web.de</a></strong>
+                </div>
+            </div>
+
+            <!-- IMPRESSUM SECTION -->
+            <div class="section">
+                <h2>⚖️ Legal Notice (Impressum)</h2>
+                <div class="legal-text">
+                    Information according to § 5 TMG / Responsible for content:<br><br>
+                    
+                    <strong>Murphy Langa</strong><br>
+                    [Your Street / House Number]<br>
+                    [Your Zip Code / City]<br>
+                    Germany<br><br>
+
+                    <strong>Contact:</strong><br>
+                    Email: <a href="mailto:murphylanga@web.de">murphylanga@web.de</a><br><br>
+
+                    <strong>Dispute Resolution:</strong><br>
+                    The European Commission provides a platform for online dispute resolution (OS): 
+                    <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>.<br>
+                    We are neither obligated nor willing to participate in dispute resolution proceedings before a consumer arbitration board.
+                </div>
+            </div>
+
+            <a href="index.html" class="back-button">← Back to Overview</a>
+
+        </div>
+    </div>
+
+</body>
+</html>
