@@ -1,635 +1,413 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Murphy Langa - Creative AI, Music & Consulting</title>
-	
-	<!-- Social Media Vorschau -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://murphylanga.github.io/musik/index.html">
-    <meta property="og:title" content="Murphy Langa - Creative AI, Music & Consulting">
-    <meta property="og:description" content="AI Experiments, Releases, ComfyUI Tutorials & Custom Consulting.">
-    <meta property="og:image" content="https://murphylanga.github.io/musik/Vorschau.jpg">
+<!-- Social Media Preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://murphylanga.github.io/musik/index.html">
+<meta property="og:title" content="Murphy Langa - Creative AI, Music & Consulting">
+<meta property="og:description" content="AI Experiments, Releases, ComfyUI Tutorials & Custom Consulting.">
+<meta property="og:image" content="https://murphylanga.github.io/musik/Vorschau.jpg">
 
-    <!-- Twitter / X Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Murphy Langa - Creative AI, Music & Consulting">
-    <meta name="twitter:description" content="AI Experiments, Releases, ComfyUI Tutorials & Custom Consulting.">
-    <meta name="twitter:image" content="https://murphylanga.github.io/musik/Vorschau.jpg">
-	
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+    html { scroll-behavior: smooth; }
+    body {
+        margin: 0; padding: 0;
+        font-family: 'Montserrat', sans-serif;
+        background-image: url('Hintergrund.webp');
+        background-size: cover; background-position: center;
+        background-attachment: fixed; background-repeat: no-repeat;
+        color: #ffffff; min-height: 100vh;
+    }
+    .overlay {
+        background: rgba(0, 0, 0, 0.6);
+        min-height: 100vh; width: 100%;
+        display: flex; flex-direction: column; align-items: center;
+        padding: 40px 0; box-sizing: border-box;
+    }
+    .container {
+        max-width: 650px; width: 90%; margin: 0 auto;
+        display: flex; flex-direction: column; align-items: center;
+    }
+    .profile-avatar {
+        width: 140px; height: 140px; border-radius: 50%;
+        border: 3px solid rgba(116, 172, 202, 0.5);
+        margin-bottom: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.8);
+        object-fit: cover;
+    }
+    .lang-switch-prominent {
+        display: flex; align-items: center; gap: 12px; margin-bottom: 25px;
+        background: rgba(10, 10, 12, 0.85); backdrop-filter: blur(10px);
+        padding: 6px 16px; border-radius: 25px;
+        border: 2px solid rgba(116, 172, 202, 0.5);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    }
+    .lang-btn {
+        color: #ffffff; text-decoration: none; font-size: 0.95em; font-weight: 800;
+        opacity: 0.5; letter-spacing: 1px; padding: 2px 8px; border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+    .lang-btn.active { opacity: 1; color: #000000; background: #74ACCA; }
+    .lang-btn:hover:not(.active) { opacity: 0.9; color: #74ACCA; }
+    .lang-divider { color: rgba(255, 255, 255, 0.3); font-size: 0.9em; font-weight: bold; }
+    h1 { font-weight: 800; font-size: 2.3em; text-align: center; margin-top: 0; margin-bottom: 5px; letter-spacing: 2px; text-shadow: 0px 4px 15px rgba(0,0,0,0.8); }
     
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-image: url('Hintergrund.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            color: #ffffff;
-            min-height: 100vh;
-        }
-        .overlay {
-            background: rgba(0, 0, 0, 0.45);
-            min-height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 0;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 650px;
-            width: 90%;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .profile-avatar {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            border: 3px solid rgba(255, 255, 255, 0.2);
-            margin-bottom: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.7);
-            object-fit: cover;
-        }
-        .lang-switch-prominent {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 25px;
-            background: rgba(15, 15, 20, 0.75);
-            backdrop-filter: blur(10px);
-            padding: 6px 16px;
-            border-radius: 25px;
-            border: 2px solid rgba(0, 255, 136, 0.4);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-        }
-        .lang-btn {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.95em;
-            font-weight: 800;
-            opacity: 0.5;
-            letter-spacing: 1px;
-            padding: 2px 8px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-        .lang-btn.active {
-            opacity: 1;
-            color: #000000;
-            background: #00ff88;
-        }
-        .lang-btn:hover:not(.active) {
-            opacity: 0.9;
-            color: #00ff88;
-        }
-        .lang-divider {
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 0.9em;
-            font-weight: bold;
-        }
-        h1 {
-            font-weight: 800;
-            font-size: 2.3em;
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 5px;
-            letter-spacing: 2px;
-            text-shadow: 0px 4px 15px rgba(0,0,0,0.8);
-        }
-        p.subtitle {
-            font-weight: 400;
-            font-size: 1.05em;
-            color: #00ff88;
-            text-align: center;
-            margin-bottom: 25px;
-            letter-spacing: 2px;
-            text-shadow: 0px 2px 10px rgba(0,0,0,0.8);
-        }
-        .section {
-            background: rgba(15, 15, 20, 0.65);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 35px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .section h2 {
-            margin-top: 0;
-            margin-bottom: 25px;
-            font-weight: 600;
-            font-size: 1.25em;
-            color: #ffffff;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            padding-bottom: 12px;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-        .section-subline {
-            text-align: center;
-            font-size: 0.85em;
-            color: #00ff88;
-            margin-top: -15px; 
-            margin-bottom: 25px;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            opacity: 0.9;
-        }
-        .button-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .link-button {
-            display: flex;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.05);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 15px 20px;
-            border-radius: 12px;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .link-button:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-3px);
-            border-color: rgba(0, 255, 136, 0.6);
-            box-shadow: 0 8px 20px rgba(0, 255, 136, 0.25);
-        }
+    p.subtitle { 
+        font-weight: 400; font-size: 1.05em; color: #74ACCA; text-align: center; 
+        margin-bottom: 20px; letter-spacing: 2px; text-shadow: 0px 2px 10px rgba(0,0,0,0.8); 
+    }
+    
+    .ai-philosophy-box {
+        background: rgba(10, 10, 12, 0.85);
+        border: 1px solid rgba(116, 172, 202, 0.4);
+        border-radius: 14px;
+        padding: 16px 22px;
+        margin-bottom: 30px;
+        font-size: 0.91em;
+        line-height: 1.6;
+        color: #e2e8f0;
+        text-align: center;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .ai-philosophy-box strong {
+        color: #74ACCA;
+        font-weight: 700;
+    }
 
-        /* --- 1. THE HERO BUTTON: Animated & High Contrast --- */
-        @keyframes labGlowPulse {
-            0% { box-shadow: 0 0 15px rgba(0, 255, 136, 0.35); border-color: rgba(0, 255, 136, 0.6); }
-            50% { box-shadow: 0 0 28px rgba(0, 255, 136, 0.7); border-color: #00ff88; }
-            100% { box-shadow: 0 0 15px rgba(0, 255, 136, 0.35); border-color: rgba(0, 255, 136, 0.6); }
-        }
-        .link-button.featured-lab {
-            background: linear-gradient(135deg, rgba(0, 255, 136, 0.22), rgba(147, 51, 234, 0.35));
-            border: 2px solid #00ff88;
-            position: relative;
-            overflow: hidden;
-            animation: labGlowPulse 3s infinite ease-in-out;
-            padding: 18px 20px;
-        }
-        .link-button.featured-lab:hover {
-            background: linear-gradient(135deg, rgba(0, 255, 136, 0.38), rgba(147, 51, 234, 0.5));
-            box-shadow: 0 0 35px rgba(0, 255, 136, 0.85);
-            transform: translateY(-3px) scale(1.015);
-            animation: none;
-        }
-        .link-button.featured-lab .link-title {
-            font-size: 1.15em;
-            color: #ffffff;
-            font-weight: 800;
-        }
-        .link-button.featured-lab .action-arrow {
-            font-size: 1.3em;
-            color: #00ff88;
-            margin-left: auto;
-            padding-left: 10px;
-            font-weight: 800;
-            transition: transform 0.2s ease;
-        }
-        .link-button.featured-lab:hover .action-arrow {
-            transform: translateX(4px);
-        }
+    .section {
+        background: rgba(10, 10, 12, 0.78); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px;
+        padding: 30px; margin-bottom: 35px; box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        width: 100%; box-sizing: border-box;
+    }
+    .section h2 {
+        margin-top: 0; margin-bottom: 25px; font-weight: 600; font-size: 1.25em; color: #ffffff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15); padding-bottom: 12px;
+        text-align: center; text-transform: uppercase; letter-spacing: 3px;
+    }
+    .section-subline { text-align: center; font-size: 0.85em; color: #74ACCA; margin-top: -15px; margin-bottom: 25px; font-weight: 400; letter-spacing: 0.5px; opacity: 0.9; }
+    
+    .band-subgroup {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1.5px solid rgba(116, 172, 202, 0.35);
+        border-radius: 16px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+    .band-subgroup h3 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 1.05em;
+        font-weight: 700;
+        color: #74ACCA;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 1px dashed rgba(116, 172, 202, 0.3);
+        padding-bottom: 8px;
+        text-align: center;
+    }
 
-        /* --- 2. MUSICFUL BUTTON --- */
-        .link-button.musicful-btn {
-            background: linear-gradient(135deg, rgba(0, 210, 255, 0.12), rgba(58, 123, 213, 0.2));
-            border: 1.5px solid rgba(0, 210, 255, 0.6);
-        }
-        .link-button.musicful-btn:hover {
-            background: linear-gradient(135deg, rgba(0, 210, 255, 0.25), rgba(58, 123, 213, 0.35));
-            border-color: #00d2ff;
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
-        }
+    .button-grid { display: flex; flex-direction: column; gap: 15px; }
+    .link-button {
+        display: flex; align-items: center; background: rgba(255, 255, 255, 0.04); color: #ffffff;
+        text-decoration: none; padding: 14px 18px; border-radius: 12px; transition: all 0.4s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .link-button:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-3px);
+        border-color: rgba(116, 172, 202, 0.7);
+        box-shadow: 0 8px 20px rgba(116, 172, 202, 0.25);
+    }
 
-        /* --- 3. AMBER/ORANGE JUMP BUTTON TO TUTORIALS --- */
-        .tutorial-jump-card {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: linear-gradient(135deg, rgba(255, 154, 0, 0.2), rgba(255, 75, 0, 0.12));
-            border: 1.5px solid #ff9d00;
-            border-radius: 12px;
-            padding: 14px 20px;
-            text-decoration: none;
-            color: #ffffff;
-            box-shadow: 0 0 18px rgba(255, 140, 0, 0.35);
-            transition: all 0.3s ease;
-        }
-        .tutorial-jump-card:hover {
-            background: linear-gradient(135deg, rgba(255, 165, 0, 0.35), rgba(255, 90, 0, 0.25));
-            border-color: #ffb700;
-            box-shadow: 0 0 28px rgba(255, 140, 0, 0.7);
-            transform: translateY(-2px);
-            color: #ffffff;
-        }
-        .tutorial-jump-card .jump-title {
-            font-weight: 700;
-            font-size: 1.05em;
-            color: #ffaa00;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .tutorial-jump-card .jump-desc {
-            font-size: 0.85em;
-            color: #e2e8f0;
-            font-weight: 300;
-            margin-top: 2px;
-        }
-        .tutorial-jump-card .jump-arrow {
-            font-size: 1.4em;
-            color: #ffb700;
-            margin-left: 15px;
-            transition: transform 0.2s ease;
-        }
-        .tutorial-jump-card:hover .jump-arrow {
-            transform: translateY(4px);
-        }
+    @keyframes highlightGlowPulse {
+        0% { box-shadow: 0 0 15px rgba(255, 223, 128, 0.3), 0 0 8px rgba(255, 255, 255, 0.2); border-color: rgba(255, 235, 170, 0.5); }
+        50% { box-shadow: 0 0 28px rgba(255, 215, 100, 0.7), 0 0 15px rgba(255, 255, 255, 0.5); border-color: #fff6d6; }
+        100% { box-shadow: 0 0 15px rgba(255, 223, 128, 0.3), 0 0 8px rgba(255, 255, 255, 0.2); border-color: rgba(255, 235, 170, 0.5); }
+    }
+    .link-button.featured-highlights {
+        background: linear-gradient(135deg, rgba(10, 10, 12, 0.9), rgba(212, 175, 55, 0.22));
+        border: 2px solid #fbe6a2; position: relative; overflow: hidden;
+        animation: highlightGlowPulse 3s infinite ease-in-out; padding: 18px 20px;
+    }
+    .link-button.featured-highlights:hover {
+        background: linear-gradient(135deg, rgba(20, 20, 25, 0.95), rgba(255, 215, 0, 0.35));
+        box-shadow: 0 0 35px rgba(255, 230, 140, 0.85); border-color: #ffffff;
+        transform: translateY(-3px) scale(1.015); animation: none;
+    }
+    .link-button.featured-highlights .link-title { font-size: 1.15em; color: #fffdf5; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+    .link-button.featured-highlights .action-arrow { font-size: 1.3em; color: #ffe699; margin-left: auto; padding-left: 10px; font-weight: 800; transition: transform 0.2s ease; }
+    .link-button.featured-highlights:hover .action-arrow { transform: translateX(4px); color: #ffffff; }
+    .badge-highlight {
+        position: absolute; top: 10px; right: 15px; background: linear-gradient(90deg, #ffffff, #ffd700);
+        color: #000000; font-size: 0.65em; font-weight: 800; padding: 2px 8px; border-radius: 10px;
+        letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
 
-        /* --- DIVIDER AFTER TOP 3 --- */
-        .section-divider {
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin: 20px 0 10px 0;
-            color: rgba(255, 255, 255, 0.45);
-            font-size: 0.78em;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        .section-divider::before,
-        .section-divider::after {
-            content: '';
-            flex: 1;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
-        }
-        .section-divider:not(:empty)::before {
-            margin-right: 15px;
-        }
-        .section-divider:not(:empty)::after {
-            margin-left: 15px;
-        }
+    @keyframes labGlowPulseRed {
+        0% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.25); border-color: rgba(255, 0, 0, 0.4); }
+        50% { box-shadow: 0 0 25px rgba(255, 0, 0, 0.6); border-color: #ff1a1a; }
+        100% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.25); border-color: rgba(255, 0, 0, 0.4); }
+    }
+    .link-button.featured-lab {
+        background: linear-gradient(135deg, rgba(10, 10, 12, 0.9), rgba(255, 0, 0, 0.18));
+        border: 2px solid #ff3333; position: relative; overflow: hidden;
+        animation: labGlowPulseRed 3s infinite ease-in-out; padding: 18px 20px;
+    }
+    .link-button.featured-lab:hover {
+        background: linear-gradient(135deg, rgba(20, 20, 25, 0.95), rgba(255, 0, 0, 0.3));
+        box-shadow: 0 0 30px rgba(255, 0, 0, 0.75); border-color: #ff4d4d;
+        transform: translateY(-3px) scale(1.015); animation: none;
+    }
+    .link-button.featured-lab .link-title { font-size: 1.15em; color: #ffffff; font-weight: 800; }
+    .link-button.featured-lab .action-arrow { font-size: 1.3em; color: #ff4d4d; margin-left: auto; padding-left: 10px; font-weight: 800; transition: transform 0.2s ease; }
+    .link-button.featured-lab:hover .action-arrow { transform: translateX(4px); }
+    .badge-lab { position: absolute; top: 10px; right: 15px; background: #ff0000; color: #ffffff; font-size: 0.65em; font-weight: 800; padding: 2px 8px; border-radius: 10px; letter-spacing: 1px; text-transform: uppercase; }
 
-        .badge-lab {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background: #00ff88;
-            color: #000000;
-            font-size: 0.65em;
-            font-weight: 800;
-            padding: 2px 8px;
-            border-radius: 10px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .img-round {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            margin-right: 20px;
-            flex-shrink: 0;
-        }
-        .img-wide {
-            height: 32px;
-            width: auto;
-            max-width: 100px;
-            object-fit: contain;
-            margin-right: 20px;
-            flex-shrink: 0;
-        }
-        .link-text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding-right: 20px;
-        }
-        .link-title {
-            font-weight: 600;
-            font-size: 1.1em;
-            margin-bottom: 3px;
-        }
-        .link-desc {
-            font-weight: 300;
-            font-size: 0.85em;
-            color: #e2e8f0;
-        }
-        .algorithm-hint {
-            background: rgba(0, 255, 136, 0.07);
-            border: 1.5px solid rgba(0, 255, 136, 0.4);
-            border-radius: 16px;
-            padding: 16px 20px;
-            margin-top: 5px;
-            font-size: 0.88em;
-            line-height: 1.5;
-            color: #e2e8f0;
-            text-align: center;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-        }
-        .algorithm-hint strong {
-            color: #00ff88;
-        }
+    .link-button.musicful-btn { background: linear-gradient(135deg, rgba(10, 10, 12, 0.9), rgba(133, 255, 0, 0.15)); border: 1.5px solid rgba(133, 255, 0, 0.6); }
+    .link-button.musicful-btn:hover { background: linear-gradient(135deg, rgba(20, 20, 25, 0.95), rgba(133, 255, 0, 0.28)); border-color: #85ff00; box-shadow: 0 0 20px rgba(133, 255, 0, 0.4); }
 
-        /* --- TUTORIAL SECTION AT THE BOTTOM IN ORANGE/GOLD --- */
-        .section-tutorials {
-            border-color: rgba(255, 157, 0, 0.5) !important;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 157, 0, 0.15) !important;
-        }
-        .section-tutorials h2 {
-            color: #ffaa00 !important;
-            border-bottom-color: rgba(255, 157, 0, 0.3) !important;
-        }
-        .section-tutorials .section-subline {
-            color: #ffd000 !important;
-        }
-        .tutorial-info-box {
-            background: rgba(255, 154, 0, 0.08);
-            border: 1.5px solid rgba(255, 157, 0, 0.45);
-            border-radius: 16px;
-            padding: 18px 20px;
-            margin-bottom: 20px;
-            font-size: 0.9em;
-            line-height: 1.6;
-            color: #e2e8f0;
-            text-align: left;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-        }
-        .tutorial-info-box strong {
-            color: #ffaa00;
-        }
+    .tutorial-jump-card {
+        display: flex; align-items: center; justify-content: space-between;
+        background: linear-gradient(135deg, rgba(10, 10, 12, 0.9), rgba(30, 144, 255, 0.22));
+        border: 1.5px solid #1e90ff; border-radius: 12px; padding: 14px 20px;
+        text-decoration: none; color: #ffffff; box-shadow: 0 0 18px rgba(30, 144, 255, 0.35); transition: all 0.3s ease;
+    }
+    .tutorial-jump-card:hover {
+        background: linear-gradient(135deg, rgba(20, 20, 25, 0.95), rgba(30, 144, 255, 0.35));
+        border-color: #4da6ff; box-shadow: 0 0 28px rgba(30, 144, 255, 0.7); transform: translateY(-2px); color: #ffffff;
+    }
+    .tutorial-jump-card .jump-title { font-weight: 700; font-size: 1.05em; color: #4da6ff; display: flex; align-items: center; gap: 8px; }
+    .tutorial-jump-card .jump-desc { font-size: 0.85em; color: #e2e8f0; font-weight: 300; margin-top: 2px; }
+    .tutorial-jump-card .jump-arrow { font-size: 1.4em; color: #4da6ff; margin-left: 15px; transition: transform 0.2s ease; }
+    .tutorial-jump-card:hover .jump-arrow { transform: translateY(4px); }
 
-        .footer-nav {
-            margin-top: 15px;
-            text-align: center;
-        }
-        .footer-nav a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.9em;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-            border-bottom: 1px dashed rgba(255,255,255,0.4);
-            padding-bottom: 2px;
-        }
-        @media (max-width: 680px) {
-            .featured-lab {
-                padding-top: 50px !important;
-            }
-        }
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 10px rgba(0, 255, 136, 0.2); border-color: rgba(0, 255, 136, 0.5); }
-            50% { box-shadow: 0 0 25px rgba(0, 255, 136, 0.6); border-color: rgba(0, 255, 136, 0.9); }
-            100% { box-shadow: 0 0 10px rgba(0, 255, 136, 0.2); border-color: rgba(0, 255, 136, 0.5); }
-        }
+    .section-divider { display: flex; align-items: center; text-align: center; margin: 20px 0 15px 0; color: rgba(255, 255, 255, 0.45); font-size: 0.78em; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+    .section-divider::before, .section-divider::after { content: ''; flex: 1; border-bottom: 1px dashed rgba(255, 255, 255, 0.2); }
+    .section-divider:not(:empty)::before { margin-right: 15px; }
+    .section-divider:not(:empty)::after { margin-left: 15px; }
 
-        #scrollToTopBtn {
-            display: none; 
-            position: fixed;
-            bottom: 40px;
-            left: calc(50% + 340px); 
-            z-index: 999;
-            background: rgba(15, 15, 20, 0.85);
-            backdrop-filter: blur(10px);
-            border: 2.5px solid #00ff88;
-            color: #00ff88;
-            cursor: pointer;
-            padding: 12px 18px;
-            border-radius: 50%;
-            font-size: 24px;
-            font-weight: 800;
-            animation: pulseGlow 2.5s infinite;
-            transition: all 0.3s ease;
-            line-height: 1;
-        }
-        #scrollToTopBtn:hover {
-            background: rgba(0, 255, 136, 0.2);
-            animation: none;
-            box-shadow: 0 0 25px rgba(0, 255, 136, 0.8);
-            border-color: #00ff88;
-            transform: translateY(-3px) scale(1.05);
-        }
-        @media (max-width: 820px) {
-            #scrollToTopBtn {
-                left: auto;
-                right: 20px;
-                bottom: 20px;
-                padding: 10px 15px;
-                font-size: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
+    .img-round { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 10px rgba(0,0,0,0.5); margin-right: 20px; flex-shrink: 0; }
+    .img-wide { height: 32px; width: auto; max-width: 100px; object-fit: contain; margin-right: 20px; flex-shrink: 0; }
+    .link-text { display: flex; flex-direction: column; align-items: flex-start; padding-right: 20px; }
+    .link-title { font-weight: 600; font-size: 1.1em; margin-bottom: 3px; }
+    .link-desc { font-weight: 300; font-size: 0.85em; color: #e2e8f0; }
+    
+    .algorithm-hint { background: rgba(116, 172, 202, 0.06); border: 1.5px solid rgba(116, 172, 202, 0.4); border-radius: 16px; padding: 16px 20px; margin-top: 5px; font-size: 0.88em; line-height: 1.5; color: #e2e8f0; text-align: center; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); }
+    .algorithm-hint strong { color: #74ACCA; }
 
-    <div class="overlay">
-        <div class="container">
-            
-            <img src="Rap.jpg" alt="Murphy" class="profile-avatar">
+    .section-tutorials { border-color: rgba(30, 144, 255, 0.5) !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(30, 144, 255, 0.15) !important; }
+    .section-tutorials h2 { color: #4da6ff !important; border-bottom-color: rgba(30, 144, 255, 0.3) !important; }
+    .section-tutorials .section-subline { color: #80bfff !important; }
+    .tutorial-info-box { background: rgba(30, 144, 255, 0.07); border: 1.5px solid rgba(30, 144, 255, 0.4); border-radius: 16px; padding: 18px 20px; margin-bottom: 20px; font-size: 0.9em; line-height: 1.6; color: #e2e8f0; text-align: left; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); }
+    .tutorial-info-box strong { color: #4da6ff; }
 
-            <div class="lang-switch-prominent">
-                <a href="index.html" class="lang-btn active">EN</a>
-                <span class="lang-divider">|</span>
-                <a href="index-de.html" class="lang-btn">DE</a>
-            </div>
+    .footer-nav { margin-top: 15px; text-align: center; }
+    .footer-nav a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9em; letter-spacing: 1px; transition: color 0.3s; border-bottom: 1px dashed rgba(255,255,255,0.4); padding-bottom: 2px; }
+    @media (max-width: 680px) { .featured-lab, .featured-highlights { padding-top: 50px !important; } }
+    @keyframes pulseGlowWhite {
+        0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.15); border-color: rgba(255, 255, 255, 0.3); }
+        50% { box-shadow: 0 0 22px rgba(255, 255, 255, 0.5); border-color: rgba(255, 255, 255, 0.8); }
+        100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.15); border-color: rgba(255, 255, 255, 0.3); }
+    }
+    #scrollToTopBtn {
+        display: none; position: fixed; bottom: 40px; left: calc(50% + 340px); z-index: 999;
+        background: rgba(10, 10, 12, 0.9); backdrop-filter: blur(10px);
+        border: 2.5px solid rgba(255, 255, 255, 0.6); color: #ffffff; cursor: pointer;
+        padding: 12px 18px; border-radius: 50%; font-size: 24px; font-weight: 800;
+        animation: pulseGlowWhite 2.5s infinite; transition: all 0.3s ease; line-height: 1;
+    }
+    #scrollToTopBtn:hover { background: rgba(255, 255, 255, 0.2); animation: none; box-shadow: 0 0 25px rgba(255, 255, 255, 0.8); border-color: #ffffff; transform: translateY(-3px) scale(1.05); }
+    @media (max-width: 820px) { #scrollToTopBtn { left: auto; right: 20px; bottom: 20px; padding: 10px 15px; font-size: 20px; } }
+</style>
 
-            <h1>MURPHY LANGA</h1>
-            <p class="subtitle">CREATIVE AI • MUSIC • TUTORIALS • CONSULTING</p>
+<div class="overlay">
+    <div class="container">
+        
+        <img src="Logo_Header.jpg" alt="Murphy Langa & The Ziggys" class="profile-avatar">
 
-            <!-- 1. SECTION: MUSIC & RELEASES -->
-            <div class="section">
-                <h2>🎵 AI Music & Releases</h2>
-                <p class="section-subline">Official streaming profiles, Musicful & playlists 👇</p>
-                
-                <div class="button-grid">
-                    
-                    <!-- 1. THE HERO: Animated & High Contrast -->
-                    <a href="playlists-en.html" class="link-button featured-lab">
-                        <span class="badge-lab">YOUTUBE EXCLUSIVE LAB</span>
-                        <img src="Logo_Murphy_und_Ziggys_rund.png" class="img-round" alt="The Ziggys Lab">
-                        <div class="link-text">
-                            <span class="link-title">The Ziggys – AI Sound Lab & Playlists</span>
-                            <span class="link-desc">Experimental Music Videos, Dialect Dub, Vintage Rock & Nu Disco</span>
-                        </div>
-                        <span class="action-arrow">➔</span>
-                    </a>
-
-                    <!-- 2. Direct Musicful Profile Button (Cyan) -->
-                    <a href="https://www.musicful.ai/artist/2gp1co7r/" target="_blank" class="link-button musicful-btn">
-                        <img src="Musikful.jpg" class="img-round" alt="Musicful AI">
-                        <div class="link-text">
-                            <span class="link-title">Musicful Artist Profile 🎶</span>
-                            <span class="link-desc">Listen, remix and follow my latest creations directly on Musicful</span>
-                        </div>
-                    </a>
-
-                    <!-- 3. Amber/Orange Jump Link to Tutorials -->
-                    <a href="#tutorials" class="tutorial-jump-card">
-                        <div>
-                            <div class="jump-title">🧠 Murphylanga AI Tutorials & Workflows</div>
-                            <div class="jump-desc">Looking for ComfyUI guides, generative video & models? Click here for details</div>
-                        </div>
-                        <span class="jump-arrow">↓</span>
-                    </a>
-
-                    <!-- ELEGANT DIVIDER -->
-                    <div class="section-divider">Official Streaming Releases</div>
-
-                    <!-- 4. Official Releases: Murphy & The Ziggys -->
-                    <a href="https://open.spotify.com/intl-de/artist/1DnjGcZxZzxjtpQvjeErGi" target="_blank" class="link-button">
-                        <img src="Spotify_Full_Logo_RGB_Green.png" class="img-wide" alt="Spotify">
-                        <div class="link-text">
-                            <span class="link-title">Murphy & The Ziggys</span>
-                            <span class="link-desc">Indie Pop & Rock • Official Artist Profile (Spotify)</span>
-                        </div>
-                    </a>
-
-                    <a href="https://music.apple.com/us/artist/murphy-the-ziggys/1837896994" target="_blank" class="link-button">
-                        <img src="DE_Apple_Music_Listen_on_Badge_RGB_083120.svg" class="img-wide" alt="Apple Music">
-                        <div class="link-text">
-                            <span class="link-title">Murphy & The Ziggys</span>
-                            <span class="link-desc">Indie Pop & Rock • Official Artist Profile (Apple Music)</span>
-                        </div>
-                    </a>
-					
-                    <a href="https://music.youtube.com/channel/UCiNaJy7pScb2UhJXYNrQ5og" target="_blank" class="link-button">
-                        <img src="yt_logo_fullcolor_white_digital.png" class="img-wide" alt="YouTube Music">
-                        <div class="link-text">
-                            <span class="link-title">Murphy & The Ziggys (Topic)</span>
-                            <span class="link-desc">Indie Pop & Rock • Official Releases (YouTube Music)</span>
-                        </div>
-                    </a>
-
-                    <!-- 5. Official Releases: The Cyrus Protocol -->
-                    <a href="https://open.spotify.com/intl-de/artist/2ToGIFnYhiMPeODjZAumJr" target="_blank" class="link-button">
-                        <img src="Spotify_Full_Logo_RGB_Green.png" class="img-wide" alt="Spotify">
-                        <div class="link-text">
-                            <span class="link-title">The Cyrus Protocol</span>
-                            <span class="link-desc">Nu Disco, Funk & Soul • Official Artist Profile (Spotify)</span>
-                        </div>
-                    </a>
-
-                    <a href="https://music.apple.com/us/artist/the-cyrus-protocol/1875877240" target="_blank" class="link-button">
-                        <img src="DE_Apple_Music_Listen_on_Badge_RGB_083120.svg" class="img-wide" alt="Apple Music">
-                        <div class="link-text">
-                            <span class="link-title">The Cyrus Protocol</span>
-                            <span class="link-desc">Nu Disco, Funk & Soul • Official Artist Profile (Apple Music)</span>
-                        </div>
-                    </a>
-
-                    <a href="https://music.youtube.com/channel/UCqf8dz_b0GHA1HkWCcha2MA" target="_blank" class="link-button">
-                        <img src="yt_logo_fullcolor_white_digital.png" class="img-wide" alt="YouTube Music">
-                        <div class="link-text">
-                            <span class="link-title">The Cyrus Protocol (Topic)</span>
-                            <span class="link-desc">Nu Disco, Funk & Soul • Official Releases (YouTube Music)</span>
-                        </div>
-                    </a>
-
-                    <!-- Compact Support Box -->
-                    <div class="algorithm-hint">
-                        <strong>Enjoying the music?</strong> Leaving a like, follow, or comment on streaming platforms helps beat the algorithm! We read every single message. 😉❤️
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- 2. SECTION: TUTORIALS & CREATIVE AI (Amber/Orange Theme & Detailed) -->
-            <div class="section section-tutorials" id="tutorials">
-                <h2>🧠 AI Knowledge & Tutorials</h2>
-                <p class="section-subline">ComfyUI Workflows, Generative Video & Models by Murphylanga 👇</p>
-                
-                <div class="button-grid">
-
-                    <div class="tutorial-info-box">
-                        <div style="font-weight: 800; color: #ffaa00; font-size: 1.05em; margin-bottom: 8px; text-align: center;">
-                            🎨 Behind the Scenes: Murphylanga AI Workflows
-                        </div>
-                        All lyrics, concepts, soundscapes, and visual prompts are originally conceived and written by <strong>Murphy</strong>[cite: 3, 7, 8]. On my main channel, I share practical deep dives into modular <strong>ComfyUI pipelines</strong>, custom nodes, video generation, and audiovisual productions. Learn how to build production-grade workflows for your creative projects step-by-step.
-                    </div>
-                    
-                    <a href="https://www.youtube.com/@murphylanga" target="_blank" class="link-button">
-                        <img src="Logo_Murphylanga_rund.png" class="img-round" alt="YouTube Tutorials">
-                        <div class="link-text">
-                            <span class="link-title">Murphy Langa (YouTube Channel)</span>
-                            <span class="link-desc">Free video tutorials, deep dives & ComfyUI walkthroughs</span>
-                        </div>
-                    </a>
-                    
-                    <a href="https://civitai.com/user/murphylanga" target="_blank" class="link-button">
-                        <img src="CivitAI.jpg" class="img-round" alt="Civitai Profile">
-                        <div class="link-text">
-                            <span class="link-title">Murphy Langa (Civitai Profile)</span>
-                            <span class="link-desc">Custom AI models, LoRAs & generation showcases</span>
-                        </div>
-                    </a>
-                    
-                </div>
-            </div>
-
-            <!-- 3. SECTION: CONSULTING & SERVICES -->
-            <div class="section" style="border-color: rgba(0, 255, 136, 0.4);">
-                <h2>🚀 AI Consulting & Custom Projects</h2>
-                <div class="button-grid">
-                    
-                    <a href="impressum-en.html" class="link-button">
-                        <div class="link-text" style="padding-right:0;">
-                            <span class="link-title">💼 Custom Music & Consulting Services</span>
-                            <span class="link-desc">Your custom AI song, unique AI visuals, plus expert ComfyUI consulting & training[cite: 7].</span>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="footer-nav">
-                <a href="impressum-en.html">Imprint, Legal & Project Inquiries / Contact</a>
-            </div>
-
+        <div class="lang-switch-prominent">
+            <a href="index.html" class="lang-btn active">EN</a>
+            <span class="lang-divider">|</span>
+            <a href="index-de.html" class="lang-btn">DE</a>
         </div>
+
+        <h1>MURPHY LANGA</h1>
+        <p class="subtitle">CREATIVE AI • MUSIC • TUTORIALS • CONSULTING</p>
+
+        <!-- Honest AI Philosophy Box -->
+        <div class="ai-philosophy-box">
+            🎵 <strong>No anonymous algorithm slop:</strong> All songs, lyrics, and visuals originate from genuine human ideas and imagination – brought to life using AI as a creative tool.<br>
+            <em>Close your eyes, listen, and decide for yourself!</em> ✨
+        </div>
+
+        <div class="section">
+            <h2>🎵 AI Music & Releases</h2>
+            <p class="section-subline">Current highlights, official streaming profiles, Musicful & playlists 👇</p>
+            
+            <div class="button-grid">
+                
+                <a href="highlights-en.html" class="link-button featured-highlights">
+                    <span class="badge-highlight">✨ NEW & FEATURED</span>
+                    <img src="Highlight.jpg" class="img-round" alt="Current Highlights">
+                    <div class="link-text">
+                        <span class="link-title">Current Highlights</span>
+                        <span class="link-desc">Latest singles, pre-saves, featured albums & special playlists</span>
+                    </div>
+                    <span class="action-arrow">➔</span>
+                </a>
+
+                <a href="playlists-en.html" class="link-button featured-lab">
+                    <span class="badge-lab">YOUTUBE EXCLUSIVE LAB</span>
+                    <img src="Logo_Murphy_und_Ziggys_rund.png" class="img-round" alt="The Ziggys Lab">
+                    <div class="link-text">
+                        <span class="link-title">The Ziggys – AI Sound Lab & Playlists</span>
+                        <span class="link-desc">Experimental Music Videos, Dialect Dub, Vintage Rock & Nu Disco</span>
+                    </div>
+                    <span class="action-arrow">➔</span>
+                </a>
+
+                <a href="https://www.musicful.ai/artist/2gp1co7r/" target="_blank" class="link-button musicful-btn">
+                    <img src="Musikful.jpg" class="img-round" alt="Musicful AI">
+                    <div class="link-text">
+                        <span class="link-title">Musicful Artist Profile 🎶</span>
+                        <span class="link-desc">Listen, remix and follow my latest creations directly on Musicful</span>
+                    </div>
+                </a>
+
+                <a href="#tutorials" class="tutorial-jump-card">
+                    <div>
+                        <div class="jump-title">🧠 Murphylanga AI Tutorials & Workflows</div>
+                        <div class="jump-desc">Looking for ComfyUI guides, generative video & models? Click here for details</div>
+                    </div>
+                    <span class="jump-arrow">↓</span>
+                </a>
+
+                <div class="section-divider">Official Streaming Releases & Stores</div>
+
+                <!-- BAND 1: MURPHY & THE ZIGGYS -->
+                <div class="band-subgroup">
+                    <h3>Murphy & The Ziggys</h3>
+                    <div class="button-grid">
+                        <a href="https://open.spotify.com/intl-de/artist/1DnjGcZxZzxjtpQvjeErGi" target="_blank" class="link-button">
+                            <img src="Spotify_Full_Logo_RGB_Green.png" class="img-wide" alt="Spotify">
+                            <div class="link-text"><span class="link-title">Spotify</span><span class="link-desc">Indie Pop & Rock • Artist Profile</span></div>
+                        </a>
+                        <a href="https://music.apple.com/us/artist/murphy-the-ziggys/1837896994" target="_blank" class="link-button">
+                            <img src="DE_Apple_Music_Listen_on_Badge_RGB_083120.svg" class="img-wide" alt="Apple Music">
+                            <div class="link-text"><span class="link-title">Apple Music</span><span class="link-desc">Indie Pop & Rock • Artist Profile</span></div>
+                        </a>
+                        <a href="https://music.amazon.de/artists/B0FPXF2KPD" target="_blank" class="link-button">
+                            <div style="background:#ff9900; color:#000; font-weight:800; font-size:0.75em; padding:4px 8px; border-radius:6px; margin-right:20px; flex-shrink:0;">AMAZON MP3</div>
+                            <div class="link-text"><span class="link-title">Amazon Music</span><span class="link-desc">Streaming & MP3 Purchase</span></div>
+                        </a>
+                        <a href="https://www.deezer.com/de/artist/344671321" target="_blank" class="link-button">
+                            <div style="background:#a238ff; color:#fff; font-weight:800; font-size:0.75em; padding:4px 8px; border-radius:6px; margin-right:20px; flex-shrink:0;">DEEZER</div>
+                            <div class="link-text"><span class="link-title">Deezer</span><span class="link-desc">Indie Pop & Rock • Artist Profile</span></div>
+                        </a>
+                        <a href="https://tidal.com/artist/66497253" target="_blank" class="link-button">
+                            <div style="background:#00ffff; color:#000; font-weight:800; font-size:0.75em; padding:4px 8px; border-radius:6px; margin-right:20px; flex-shrink:0;">TIDAL</div>
+                            <div class="link-text"><span class="link-title">Tidal</span><span class="link-desc">Hi-Fi Audio • Artist Profile</span></div>
+                        </a>
+                        <a href="https://www.kkbox.com/tw/tc/artist/DXIT4jQ11asjG_ElRJ" target="_blank" class="link-button">
+                            <div style="background:#203354; color:#74ACCA; font-weight:800; font-size:0.75em; padding:4px 8px; border-radius:6px; margin-right:20px; border: 1px solid #74ACCA; flex-shrink:0;">KKBOX</div>
+                            <div class="link-text"><span class="link-title">Murphy & the Ziggys (墨菲與齊iggy)</span><span class="link-desc">Asia / Taiwan / 華語 Stream</span></div>
+                        </a>
+                        <a href="https://music.youtube.com/channel/UCiNaJy7pScb2UhJXYNrQ5og" target="_blank" class="link-button">
+                            <img src="yt_logo_fullcolor_white_digital.png" class="img-wide" alt="YouTube Music">
+                            <div class="link-text"><span class="link-title">YouTube Music (Topic)</span><span class="link-desc">Official Releases</span></div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BAND 2: THE CYRUS PROTOCOL -->
+                <div class="band-subgroup">
+                    <h3>The Cyrus Protocol</h3>
+                    <div class="button-grid">
+                        <a href="https://open.spotify.com/intl-de/artist/2ToGIFnYhiMPeODjZAumJr" target="_blank" class="link-button">
+                            <img src="Spotify_Full_Logo_RGB_Green.png" class="img-wide" alt="Spotify">
+                            <div class="link-text"><span class="link-title">Spotify</span><span class="link-desc">Nu Disco, Funk & Soul • Artist Profile</span></div>
+                        </a>
+                        <a href="https://music.apple.com/us/artist/the-cyrus-protocol/1875877240" target="_blank" class="link-button">
+                            <img src="DE_Apple_Music_Listen_on_Badge_RGB_083120.svg" class="img-wide" alt="Apple Music">
+                            <div class="link-text"><span class="link-title">Apple Music</span><span class="link-desc">Nu Disco, Funk & Soul • Artist Profile</span></div>
+                        </a>
+                        <a href="https://music.amazon.de/artists/B0GMK53SH7" target="_blank" class="link-button">
+                            <div style="background:#ff9900; color:#000; font-weight:800; font-size:0.75em; padding:4px 8px; border-radius:6px; margin-right:20px; flex-shrink:0;">AMAZON MP3</div>
+                            <div class="link-text"><span class="link-title">Amazon Music</span><span class="link-desc">Streaming & MP3 Purchase</span></div>
+                        </a>
+                        <a href="https://www.deezer.com/de/artist/372265581" target="_blank" class="link-button">
+                            <div style="background:#a238ff; color:#fff; font-weight:800; font-size:0.75em; padding:4px 8px; border-radius:6px; margin-right:20px; flex-shrink:0;">DEEZER</div>
+                            <div class="link-text"><span class="link-title">Deezer</span><span class="link-desc">Nu Disco, Funk & Soul • Artist Profile</span></div>
+                        </a>
+                        <a href="https://tidal.com/artist/74227867" target="_blank" class="link-button">
+                            <div style="background:#00ffff; color:#000; font-weight:800; font-size:0.75em; padding:4px 8px; border-radius:6px; margin-right:20px; flex-shrink:0;">TIDAL</div>
+                            <div class="link-text"><span class="link-title">Tidal</span><span class="link-desc">Hi-Fi Audio • Artist Profile</span></div>
+                        </a>
+                        <a href="https://www.kkbox.com/tw/tc/artist/T_wQNRdj04ncSXR8LA" target="_blank" class="link-button">
+                            <div style="background:#203354; color:#74ACCA; font-weight:800; font-size:0.75em; padding:4px 8px; border-radius:6px; margin-right:20px; border: 1px solid #74ACCA; flex-shrink:0;">KKBOX</div>
+                            <div class="link-text"><span class="link-title">The Cyrus Protocol (賽yrus協定)</span><span class="link-desc">Asia / Taiwan / 華語 Stream</span></div>
+                        </a>
+                        <a href="https://music.youtube.com/channel/UCqf8dz_b0GHA1HkWCcha2MA" target="_blank" class="link-button">
+                            <img src="yt_logo_fullcolor_white_digital.png" class="img-wide" alt="YouTube Music">
+                            <div class="link-text"><span class="link-title">YouTube Music (Topic)</span><span class="link-desc">Official Releases</span></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="algorithm-hint">
+                    <strong>Enjoying the music?</strong> Leaving a like, follow, or comment on streaming platforms helps beat the algorithm! We read every single message. 😉❤️
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section section-tutorials" id="tutorials">
+            <h2>🧠 AI Knowledge & Tutorials</h2>
+            <p class="section-subline">ComfyUI Workflows, Generative Video & Models by Murphylanga 👇</p>
+            
+            <div class="button-grid">
+                <div class="tutorial-info-box">
+                    <div style="font-weight: 800; color: #4da6ff; font-size: 1.05em; margin-bottom: 8px; text-align: center;">
+                        🎨 Behind the Scenes: Murphylanga AI Workflows
+                    </div>
+                    All lyrics, concepts, soundscapes, and visual prompts are originally conceived and written by <strong>Murphy</strong>[cite: 3, 7, 8]. On my main channel, I share practical deep dives into modular <strong>ComfyUI pipelines</strong>, custom nodes, video generation, and audiovisual productions.
+                </div>
+                
+                <a href="https://www.youtube.com/@murphylanga" target="_blank" class="link-button">
+                    <img src="Logo_Murphylanga_rund.png" class="img-round" alt="YouTube Tutorials">
+                    <div class="link-text"><span class="link-title">Murphy Langa (YouTube Channel)</span><span class="link-desc">Free video tutorials, deep dives & ComfyUI walkthroughs</span></div>
+                </a>
+                <a href="https://civitai.com/user/murphylanga" target="_blank" class="link-button">
+                    <img src="CivitAI.jpg" class="img-round" alt="Civitai Profil">
+                    <div class="link-text"><span class="link-title">Murphy Langa (Civitai Profil)</span><span class="link-desc">Custom AI models, LoRAs & generation showcases</span></div>
+                </a>
+            </div>
+        </div>
+
+        <div class="section" style="border-color: rgba(30, 144, 255, 0.4);">
+            <h2>🚀 AI Consulting & Custom Projects</h2>
+            <div class="button-grid">
+                <a href="impressum-en.html" class="link-button">
+                    <div class="link-text" style="padding-right:0;">
+                        <span class="link-title">💼 Custom Music & Consulting Services</span>
+                        <span class="link-desc">Your custom AI song, unique AI visuals, plus expert ComfyUI consulting & training[cite: 7].</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-nav">
+            <a href="impressum-en.html">Imprint, Legal & Project Inquiries / Contact</a>
+        </div>
+
     </div>
+</div>
 
-    <!-- Scroll to Top Button & Script -->
-    <button id="scrollToTopBtn" title="Scroll to top">↑</button>
-
-    <script>
-        let mybutton = document.getElementById("scrollToTopBtn");
-        
-        window.onscroll = function() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        };
-        
-        mybutton.onclick = function() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        };
-    </script>
-
-</body>
-</html>
+<button id="scrollToTopBtn" title="Scroll to top">↑</button>
+<script>
+    let mybutton = document.getElementById("scrollToTopBtn");
+    window.onscroll = function() { mybutton.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none"; };
+    mybutton.onclick = function() { window.scrollTo({top: 0, behavior: 'smooth'}); };
+</script>

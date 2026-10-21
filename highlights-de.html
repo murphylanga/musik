@@ -1,0 +1,280 @@
+<!-- Social Media Vorschau -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://murphylanga.github.io/musik/highlights-de.html">
+<meta property="og:title" content="Aktuelle Highlights – Murphy Langa, The Ziggys & The Cyrus Protocol">
+<meta property="og:description" content="The Longest Night (Pre-Save), Singles, EPs, Alben und Highlight-Playlists.">
+<meta property="og:image" content="https://murphylanga.github.io/musik/Highlight.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0; padding: 0;
+        font-family: 'Montserrat', sans-serif;
+        background-image: url('Hintergrund.webp');
+        background-size: cover; background-position: center;
+        background-attachment: fixed; background-repeat: no-repeat;
+        color: #ffffff; min-height: 100vh;
+    }
+    .overlay {
+        background: rgba(0, 0, 0, 0.6);
+        min-height: 100vh; width: 100%;
+        display: flex; flex-direction: column; align-items: center;
+        padding: 40px 0; box-sizing: border-box;
+    }
+    .container {
+        max-width: 650px; width: 90%; margin: 0 auto;
+        display: flex; flex-direction: column; align-items: center;
+    }
+    .lang-switch {
+        display: flex; gap: 10px; margin-bottom: 20px;
+        background: rgba(10, 10, 12, 0.85); padding: 6px 14px;
+        border-radius: 20px; border: 1px solid rgba(255, 235, 170, 0.35);
+    }
+    .lang-btn { color: #ffffff; text-decoration: none; font-size: 0.85em; font-weight: 600; opacity: 0.5; transition: all 0.3s ease; }
+    .lang-btn.active, .lang-btn:hover { opacity: 1; color: #ffe699; }
+    .back-link { align-self: flex-start; color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 600; font-size: 0.9em; margin-bottom: 25px; display: flex; align-items: center; transition: color 0.3s ease; }
+    .back-link:hover { color: #ffe699; }
+    .back-btn-bottom {
+        display: inline-flex; align-items: center; justify-content: center;
+        padding: 12px 24px; font-size: 0.9em; font-weight: 600; border-radius: 25px;
+        text-decoration: none; color: #ffffff; background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 235, 170, 0.35); transition: all 0.3s ease; margin-bottom: 20px;
+    }
+    .back-btn-bottom:hover { background: rgba(255, 215, 100, 0.2); border-color: #ffe699; color: #ffe699; transform: translateY(-2px); }
+    h1 { font-weight: 800; font-size: 2.2em; text-align: center; margin-top: 0; margin-bottom: 10px; letter-spacing: 1px; text-shadow: 0px 4px 15px rgba(0,0,0,0.8); }
+    .genre-banner {
+        background: rgba(10, 10, 12, 0.85); backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 230, 150, 0.5); border-radius: 16px;
+        padding: 14px 20px; margin-bottom: 30px; text-align: center;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.6), 0 0 15px rgba(255, 215, 100, 0.15); width: 100%; box-sizing: border-box;
+    }
+    .genre-banner-title { font-weight: 800; font-size: 1.1em; color: #ffe699; letter-spacing: 2px; margin-bottom: 6px; }
+    .genre-banner-text { font-size: 0.92em; font-weight: 400; color: #ffffff; line-height: 1.5; }
+    .genre-banner-text span { color: #ffe699; font-weight: 600; }
+    .section {
+        background: rgba(10, 10, 12, 0.78); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px;
+        padding: 25px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.7); width: 100%; box-sizing: border-box;
+    }
+    .algorithm-hint {
+        background: rgba(255, 223, 128, 0.06); border: 1px solid rgba(255, 230, 150, 0.35);
+        border-radius: 14px; padding: 16px 20px; margin-bottom: 25px; font-size: 0.88em;
+        line-height: 1.5; color: #e2e8f0; text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .algorithm-hint strong { color: #ffe699; }
+    .section-divider { display: flex; align-items: center; text-align: center; margin: 25px 0 15px 0; color: rgba(255, 230, 150, 0.85); font-size: 0.78em; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+    .section-divider::before, .section-divider::after { content: ''; flex: 1; border-bottom: 1px dashed rgba(255, 230, 150, 0.35); }
+    .section-divider:not(:empty)::before { margin-right: 15px; }
+    .section-divider:not(:empty)::after { margin-left: 15px; }
+    .playlist-card {
+        display: flex; flex-direction: column; background: rgba(255, 255, 255, 0.04);
+        border-radius: 14px; padding: 15px; margin-bottom: 20px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;
+    }
+    .playlist-card.featured-card {
+        background: linear-gradient(135deg, rgba(20, 20, 25, 0.9), rgba(212, 175, 55, 0.15));
+        border: 1.5px solid rgba(255, 230, 150, 0.65); box-shadow: 0 0 22px rgba(255, 215, 100, 0.18);
+    }
+    .playlist-card:hover { border-color: rgba(255, 230, 150, 0.75); box-shadow: 0 5px 18px rgba(255, 215, 100, 0.28); }
+    .card-header { display: flex; align-items: center; margin-bottom: 12px; }
+    .img-playlist { width: 68px; height: 68px; border-radius: 10px; object-fit: cover; box-shadow: 0 2px 10px rgba(0,0,0,0.5); margin-right: 15px; flex-shrink: 0; background-color: rgba(255, 255, 255, 0.1); }
+    .artist-tag { display: inline-block; font-size: 0.7em; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 6px; margin-bottom: 4px; background: rgba(255, 230, 150, 0.2); color: #ffe699; border: 1px solid rgba(255, 230, 150, 0.4); }
+    .link-title { font-weight: 700; font-size: 1.08em; margin-bottom: 4px; line-height: 1.3; color: #ffffff; }
+    .link-desc { font-weight: 300; font-size: 0.85em; color: #e2e8f0; }
+    .card-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 5px; }
+    .action-btn {
+        flex: 1 1 calc(50% - 10px); min-width: 125px; display: flex; align-items: center; justify-content: center;
+        padding: 9px 12px; font-size: 0.82em; font-weight: 600; border-radius: 8px; text-decoration: none;
+        color: #ffffff; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.2s ease; box-sizing: border-box;
+    }
+    .action-btn:hover { background: rgba(255, 230, 150, 0.25); border-color: #ffe699; transform: translateY(-2px); }
+    .action-btn.presave {
+        flex: 1 1 100%; background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(212, 175, 55, 0.35));
+        border: 1.5px solid #fbe6a2; color: #fffdf5; font-weight: 800; padding: 11px 15px; font-size: 0.88em;
+    }
+    .action-btn.presave:hover { background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 215, 0, 0.5)); box-shadow: 0 0 18px rgba(255, 230, 140, 0.7); border-color: #ffffff; }
+    .action-btn.spotify { background: rgba(29, 185, 84, 0.2); border-color: rgba(29, 185, 84, 0.5); }
+    .action-btn.spotify:hover { background: rgba(29, 185, 84, 0.4); border-color: #1db954; }
+    .action-btn.apple { background: rgba(250, 36, 60, 0.2); border-color: rgba(250, 36, 60, 0.45); }
+    .action-btn.apple:hover { background: rgba(250, 36, 60, 0.4); border-color: #fa243c; }
+    .action-btn.amazon { background: rgba(0, 168, 225, 0.2); border-color: rgba(0, 168, 225, 0.45); }
+    .action-btn.amazon:hover { background: rgba(0, 168, 225, 0.4); border-color: #00a8e1; }
+    .action-btn.yt-music { background: rgba(255, 0, 0, 0.2); border-color: rgba(255, 0, 0, 0.4); }
+    .action-btn.yt-music:hover { background: rgba(255, 0, 0, 0.4); border-color: rgba(255, 0, 0, 0.7); }
+
+    @keyframes pulseGlow {
+        0% { box-shadow: 0 0 10px rgba(255, 230, 150, 0.2); border-color: rgba(255, 230, 150, 0.5); }
+        50% { box-shadow: 0 0 25px rgba(255, 230, 150, 0.6); border-color: rgba(255, 230, 150, 0.9); }
+        100% { box-shadow: 0 0 10px rgba(255, 230, 150, 0.2); border-color: rgba(255, 230, 150, 0.5); }
+    }
+    #scrollToTopBtn {
+        display: none; position: fixed; bottom: 40px; left: calc(50% + 340px); z-index: 999;
+        background: rgba(10, 10, 12, 0.9); backdrop-filter: blur(10px);
+        border: 2.5px solid #ffe699; color: #ffe699; cursor: pointer;
+        padding: 12px 18px; border-radius: 50%; font-size: 24px; font-weight: 800;
+        animation: pulseGlow 2.5s infinite; transition: all 0.3s ease; line-height: 1;
+    }
+    #scrollToTopBtn:hover { background: rgba(255, 230, 150, 0.2); animation: none; box-shadow: 0 0 25px rgba(255, 230, 150, 0.8); border-color: #ffffff; transform: translateY(-3px) scale(1.05); }
+    @media (max-width: 820px) { #scrollToTopBtn { left: auto; right: 20px; bottom: 20px; padding: 10px 15px; font-size: 20px; } }
+</style>
+
+<div class="overlay">
+    <div class="container">
+        
+        <div class="lang-switch">
+            <a href="highlights-de.html" class="lang-btn active">🇩🇪 DE</a>
+            <a href="highlights-en.html" class="lang-btn">🇬🇧 EN</a>
+        </div>
+
+        <a href="index-de.html" class="back-link">← Zurück zur Hauptseite</a>
+
+        <h1>✨ AKTUELLE HIGHLIGHTS</h1>
+        
+        <div class="genre-banner">
+            <div class="genre-banner-title">PRE-SAVES, SINGLES, ALBEN & SPECIAL PLAYLISTS</div>
+            <div class="genre-banner-text">
+                Unsere neuesten Highlights von <span>Murphy & The Ziggys</span> & <span>The Cyrus Protocol</span> direkt auf Spotify, Apple Music, Amazon & YouTube 👇
+            </div>
+        </div>
+
+        <div class="section">
+            
+            <div class="algorithm-hint">
+                🌟 <strong>Zwei Bands – Zwei Sprachen – Ein kreatives KI-Universum!</strong><br>
+                Sichere dir jetzt unser kommendes Weihnachts-Highlight <strong>„The Longest Night“</strong> per Pre-Save oder höre unsere aktuellen Singles, Alben und Playlists direkt auf deiner Lieblingsplattform! ❤️
+            </div>
+
+            <div class="section-divider">❄️ Kommendes Highlight & Weihnachtsalbum (Pre-Save)</div>
+
+            <div class="playlist-card featured-card">
+                <div class="card-header">
+                    <img src="Highlight.jpg" class="img-playlist" alt="The Longest Night">
+                    <div>
+                        <span class="artist-tag">✨ Pre-Save • Murphy & The Ziggys</span>
+                        <div class="link-title">The Longest Night (Single & Weihnachtsalbum)</div>
+                        <div class="link-desc">Demnächst erscheint die erste Single & Ende November das große Weihnachtsalbum – jetzt vorab sichern!</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://save-it.cc/artistfy/MxfbKUWN" target="_blank" class="action-btn presave">✨ Jetzt Pre-Saven (Alle Plattformen)</a>
+                </div>
+            </div>
+
+            <div class="section-divider">🔥 Zweisprachiges Single-Highlight (EN & DE)</div>
+
+            <div class="playlist-card featured-card">
+                <div class="card-header">
+                    <img src="The Screen between us.jpg" class="img-playlist" alt="The Screen Between Us">
+                    <div>
+                        <span class="artist-tag">🇬🇧 Englische Version • The Cyrus Protocol</span>
+                        <div class="link-title">The Screen Between Us (Single)</div>
+                        <div class="link-desc">Nu Disco, Funk & Soul • Jetzt überall im Stream verfügbar!</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://open.spotify.com/intl-de/album/3tePL1ggvNAAdWNHyrcx8I" target="_blank" class="action-btn spotify">🟢 Spotify</a>
+                    <a href="https://music.apple.com/us/song/the-screen-between-us/6797844558" target="_blank" class="action-btn apple">🍎 Apple Music</a>
+                    <a href="https://music.amazon.de/albums/B0HCVC1XLK" target="_blank" class="action-btn amazon">🛒 Amazon Music</a>
+                    <a href="https://music.youtube.com/watch?v=g1Jzh5o1tGk" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                </div>
+            </div>
+
+            <div class="playlist-card featured-card">
+                <div class="card-header">
+                    <img src="Nur noch ein Satz.jpg" class="img-playlist" alt="Nur noch ein Satz">
+                    <div>
+                        <span class="artist-tag">🇩🇪 Deutsche Version • Murphy & The Ziggys</span>
+                        <div class="link-title">Nur noch ein Satz (Single)</div>
+                        <div class="link-desc">Das deutsche Pendant von Murphy & The Ziggys • Überall verfügbar!</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://open.spotify.com/intl-de/track/22ffpXVhWptINPlmdUyI8b?autoplay_ok=1" target="_blank" class="action-btn spotify">🟢 Spotify</a>
+                    <a href="https://music.apple.com/us/album/nur-noch-ein-satz/6776541892?i=6776542105" target="_blank" class="action-btn apple">🍎 Apple Music</a>
+                    <a href="https://music.amazon.de/albums/B0H3XTDMFS" target="_blank" class="action-btn amazon">🛒 Amazon Music</a>
+                    <a href="https://music.youtube.com/watch?v=YwnJywyGjBw" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                </div>
+            </div>
+
+            <div class="section-divider">💿 Aktuelle Alben & EPs</div>
+
+            <div class="playlist-card">
+                <div class="card-header">
+                    <img src="Letter from the Floor.jpg" class="img-playlist" alt="Letter from the Floor">
+                    <div>
+                        <span class="artist-tag">Funk, Soul & Nu Disco • The Cyrus Protocol</span>
+                        <div class="link-title">Letter from the Floor (Album / EP)</div>
+                        <div class="link-desc">Groovige Funk-, Soul- & Nu-Disco-Vibes von The Cyrus Protocol</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://open.spotify.com/intl-de/album/6srsOD8VJqfIUathO8x0iF" target="_blank" class="action-btn spotify">🟢 Spotify</a>
+                    <a href="https://music.apple.com/us/album/letter-from-the-floor-ep/6805019092" target="_blank" class="action-btn apple">🍎 Apple Music</a>
+                    <a href="https://music.amazon.de/albums/B0HGFBVM22" target="_blank" class="action-btn amazon">🛒 Amazon Music</a>
+                    <a href="https://music.youtube.com/playlist?list=OLAK5uy_muV7UkE0K1o6ZfDLKrgTwfJ6Ymgl1djpA" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                </div>
+            </div>
+
+            <div class="playlist-card">
+                <div class="card-header">
+                    <img src="Oceans Away, Hearts Alight.jpg" class="img-playlist" alt="Oceans Away, Hearts Alight">
+                    <div>
+                        <span class="artist-tag">Indie Pop & Rock • Murphy & The Ziggys</span>
+                        <div class="link-title">Oceans Away, Hearts Alight (Album)</div>
+                        <div class="link-desc">9 emotionale & energiegeladene Tracks von Murphy & The Ziggys</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://open.spotify.com/intl-de/album/0TZTFxhQBQgGpM8yK63o99" target="_blank" class="action-btn spotify">🟢 Spotify</a>
+                    <a href="https://music.apple.com/gb/album/oceans-away-hearts-alight/1846335617" target="_blank" class="action-btn apple">🍎 Apple Music</a>
+                    <a href="https://music.amazon.de/albums/B0FWCKT5Y5" target="_blank" class="action-btn amazon">🛒 Amazon Music</a>
+                    <a href="https://music.youtube.com/playlist?list=OLAK5uy_mVAcxN7rKM5iSHtexcq-VTk6B6CPIgXzs" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                </div>
+            </div>
+
+            <div class="section-divider">📺 YouTube Special Playlists</div>
+
+            <div class="playlist-card">
+                <div class="card-header">
+                    <img src="Christmas.jpg" class="img-playlist" alt="Christmas">
+                    <div>
+                        <span class="artist-tag">YouTube Special</span>
+                        <div class="link-title">Murphy & The Ziggys Christmas</div>
+                        <div class="link-desc">Besondere Weihnachts-KI-Songs & festliche Sounds zum Durchhören</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX6NkGEuW7RonKX-1whgPqoA" target="_blank" class="action-btn">▶ YouTube Playlist</a>
+                    <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX6NkGEuW7RonKX-1whgPqoA" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                </div>
+            </div>
+
+            <div class="playlist-card">
+                <div class="card-header">
+                    <img src="AI_Reggae.jpg" class="img-playlist" alt="AI Reggae">
+                    <div>
+                        <span class="artist-tag">YouTube Special • Fränkisch & Englisch</span>
+                        <div class="link-title">Island Riddims & Franggn Dub 💨 The Ultimate AI Reggae</div>
+                        <div class="link-desc">Reggae auf Fränkisch und Englisch – Karibische Riddims treffen auf fränkischen Dub</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://www.youtube.com/playlist?list=PLGcXQnapfUhg" target="_blank" class="action-btn">▶ YouTube Playlist</a>
+                    <a href="https://music.youtube.com/playlist?list=PLGcXQnapfUhg" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="index-de.html" class="back-btn-bottom">← Zurück zur Hauptseite</a>
+        <div style="font-size: 0.75em; color: rgba(255, 255, 255, 0.3); margin-top: 10px; letter-spacing: 1px; text-align: center;">Made with ❤️ by Murphy Langa</div>
+
+    </div>
+</div>
+
+<button id="scrollToTopBtn" title="Nach oben scrollen">↑</button>
+<script>
+    let mybutton = document.getElementById("scrollToTopBtn");
+    window.onscroll = function() { mybutton.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none"; };
+    mybutton.onclick = function() { window.scrollTo({top: 0, behavior: 'smooth'}); };
+</script>
