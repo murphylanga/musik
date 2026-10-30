@@ -9,18 +9,19 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://murphylanga.github.io/musik/playlists-en.html">
     <meta property="og:title" content="The Ziggys – AI Sound Lab & Playlists (EN)">
-    <meta property="og:description" content="All YouTube playlists by Murphy Langa & The Ziggys: Indie, Art Rock, Reggae Dub & Experimental AI Sound.">
+    <meta property="og:description" content="All 13 YouTube playlists by Murphy Langa & The Ziggys: Indie, Art Rock, Reggae Dub, Funk & Experimental AI Sound.">
     <meta property="og:image" content="https://murphylanga.github.io/musik/Playlist-en.jpg">
 
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The Ziggys – AI Sound Lab & Playlists (EN)">
-    <meta name="twitter:description" content="All YouTube playlists by Murphy Langa & The Ziggys: Indie, Art Rock, Reggae Dub & Experimental AI Sound.">
+    <meta name="twitter:description" content="All 13 YouTube playlists by Murphy Langa & The Ziggys: Indie, Art Rock, Reggae Dub, Funk & Experimental AI Sound.">
     <meta name="twitter:image" content="https://murphylanga.github.io/musik/Playlist-en.jpg">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <style>
+        html { scroll-behavior: smooth; }
         body {
             margin: 0; padding: 0;
             font-family: 'Montserrat', sans-serif;
@@ -42,11 +43,11 @@
         .lang-switch {
             display: flex; gap: 10px; margin-bottom: 20px;
             background: rgba(10, 10, 12, 0.85); padding: 6px 14px;
-            border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.25);
         }
         .lang-btn { color: #ffffff; text-decoration: none; font-size: 0.85em; font-weight: 600; opacity: 0.5; transition: all 0.3s ease; }
         .lang-btn.active, .lang-btn:hover { opacity: 1; color: #ff3333; }
-        .back-link { align-self: flex-start; color: rgba(255, 255, 255, 0.7); text-decoration: none; font-weight: 600; font-size: 0.9em; margin-bottom: 20px; display: flex; align-items: center; transition: color 0.3s ease; }
+        .back-link { align-self: flex-start; color: rgba(255, 255, 255, 0.75); text-decoration: none; font-weight: 600; font-size: 0.9em; margin-bottom: 20px; display: flex; align-items: center; transition: color 0.3s ease; }
         .back-link:hover { color: #ff3333; }
         .back-btn-bottom {
             display: inline-flex; align-items: center; justify-content: center;
@@ -58,7 +59,7 @@
         h1 { font-weight: 800; font-size: 2.1em; text-align: center; margin-top: 0; margin-bottom: 12px; letter-spacing: 1px; text-shadow: 0px 4px 15px rgba(0,0,0,0.8); }
         .genre-banner {
             background: rgba(10, 10, 12, 0.85); backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 0, 0, 0.4); border-radius: 16px;
+            border: 1px solid rgba(255, 0, 0, 0.45); border-radius: 16px;
             padding: 14px 20px; margin-bottom: 25px; text-align: center;
             box-shadow: 0 4px 20px rgba(0,0,0,0.6); width: 100%; box-sizing: border-box;
         }
@@ -78,26 +79,91 @@
         .algorithm-hint strong { color: #ff3333; }
         .playlist-card {
             display: flex; flex-direction: column; background: rgba(255, 255, 255, 0.04);
-            border-radius: 14px; padding: 15px; margin-bottom: 18px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;
+            border-radius: 14px; padding: 15px; margin-bottom: 18px; border: 1px solid rgba(255, 255, 255, 0.12); transition: all 0.3s ease;
         }
-        .playlist-card:hover { border-color: rgba(255, 255, 255, 0.55); box-shadow: 0 5px 15px rgba(255, 255, 255, 0.18); }
+        .playlist-card:hover { border-color: rgba(255, 255, 255, 0.65); box-shadow: 0 5px 18px rgba(255, 255, 255, 0.2); }
+
+        /* Special Musicful Feature Card */
+        .playlist-card.musicful-feature {
+            background: linear-gradient(135deg, rgba(15, 20, 12, 0.92), rgba(133, 255, 0, 0.12));
+            border: 1.5px solid rgba(133, 255, 0, 0.55);
+            box-shadow: 0 0 22px rgba(133, 255, 0, 0.15);
+            padding: 18px;
+        }
+        .playlist-card.musicful-feature:hover {
+            border-color: #85ff00;
+            box-shadow: 0 5px 25px rgba(133, 255, 0, 0.3);
+        }
+        .musicful-story {
+            background: rgba(0, 0, 0, 0.45);
+            border-left: 3px solid #85ff00;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin: 8px 0 14px 0;
+            font-size: 0.84em;
+            line-height: 1.55;
+            color: #e2e8f0;
+        }
+        .musicful-story strong { color: #85ff00; }
+        .musicful-try-box {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed rgba(133, 255, 0, 0.35);
+        }
+        .musicful-try-title {
+            font-size: 0.8em;
+            font-weight: 700;
+            color: #85ff00;
+            margin-bottom: 8px;
+            text-align: center;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .try-buttons-grid {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .try-btn {
+            flex: 1 1 calc(33.33% - 8px);
+            min-width: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 9px 10px;
+            font-size: 0.8em;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #ffffff;
+            background: rgba(133, 255, 0, 0.15);
+            border: 1px solid rgba(133, 255, 0, 0.45);
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .try-btn:hover {
+            background: rgba(133, 255, 0, 0.32);
+            border-color: #85ff00;
+            transform: translateY(-2px);
+        }
+
         .card-header { display: flex; align-items: center; margin-bottom: 12px; }
         .img-playlist { width: 62px; height: 62px; border-radius: 10px; object-fit: cover; box-shadow: 0 2px 10px rgba(0,0,0,0.5); margin-right: 15px; flex-shrink: 0; background-color: rgba(255, 255, 255, 0.1); }
-        .link-title { font-weight: 600; font-size: 1.05em; margin-bottom: 4px; line-height: 1.3; }
+        .link-title { font-weight: 700; font-size: 1.05em; margin-bottom: 4px; line-height: 1.3; color: #ffffff; }
         .link-desc { font-weight: 300; font-size: 0.85em; color: #e2e8f0; line-height: 1.35; }
         .card-actions { display: flex; gap: 8px; margin-top: 5px; flex-wrap: wrap; }
         .action-btn {
             flex: 1 1 calc(50% - 8px); display: flex; align-items: center; justify-content: center;
             padding: 9px 12px; font-size: 0.82em; font-weight: 600; border-radius: 8px;
             text-decoration: none; color: #ffffff; background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15); transition: all 0.2s ease; box-sizing: border-box;
+            border: 1px solid rgba(255, 255, 255, 0.18); transition: all 0.2s ease; box-sizing: border-box;
         }
-        .action-btn:hover { background: rgba(255, 255, 255, 0.2); border-color: #ffffff; transform: translateY(-2px); }
+        .action-btn:hover { background: rgba(255, 255, 255, 0.2); border-color: #ffffff; box-shadow: 0 0 12px rgba(255, 255, 255, 0.35); transform: translateY(-2px); }
         .action-btn.full-width { flex: 1 1 100%; }
-        .action-btn.yt-music { background: rgba(255, 0, 0, 0.2); border-color: rgba(255, 0, 0, 0.4); }
-        .action-btn.yt-music:hover { background: rgba(255, 0, 0, 0.4); border-color: rgba(255, 0, 0, 0.7); }
-        .action-btn.musicful { background: rgba(133, 255, 0, 0.15); border-color: rgba(133, 255, 0, 0.5); }
-        .action-btn.musicful:hover { background: rgba(133, 255, 0, 0.3); border-color: #85ff00; }
+        .action-btn.yt-music { background: rgba(255, 0, 0, 0.2); border-color: rgba(255, 0, 0, 0.45); }
+        .action-btn.yt-music:hover { background: rgba(255, 0, 0, 0.4); border-color: #ff3333; box-shadow: 0 0 12px rgba(255, 0, 0, 0.4); }
+        .action-btn.musicful { background: rgba(133, 255, 0, 0.2); border-color: rgba(133, 255, 0, 0.6); color: #fff; }
+        .action-btn.musicful:hover { background: rgba(133, 255, 0, 0.35); border-color: #85ff00; box-shadow: 0 0 12px rgba(133, 255, 0, 0.4); }
 
         @keyframes pulseGlowWhite {
             0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.15); border-color: rgba(255, 255, 255, 0.3); }
@@ -122,6 +188,7 @@
             .img-playlist { width: 56px; height: 56px; margin-right: 12px; }
             .link-title { font-size: 1.02em; }
             .action-btn { padding: 10px 8px; font-size: 0.82em; }
+            .try-btn { flex: 1 1 100%; padding: 9px; }
             #scrollToTopBtn { left: auto; right: 16px; bottom: 16px; padding: 10px 15px; font-size: 20px; }
         }
     </style>
@@ -141,9 +208,9 @@
         <h1>THE ZIGGYS – AI SOUND LAB</h1>
 
         <div class="genre-banner">
-            <div class="genre-banner-title">YOUTUBE EXCLUSIVE PLAYLISTS</div>
+            <div class="genre-banner-title">YOUTUBE EXCLUSIVE EXPERIMENTS & PLAYLISTS</div>
             <div class="genre-banner-text">
-                From <span>Indie, Art Rock & Soul</span> to <span>Reggae & Dub</span> and <span>AI Experiments</span> – Discover all playlists 👇
+                From <span>Indie, Art Rock & Soul</span> to <span>Vintage Rock, Dialect Dub & Hip-Hop</span> – Discover all 13 playlists below 👇
             </div>
         </div>
 
@@ -155,12 +222,12 @@
                 <strong>Got ideas, requests, or feedback?</strong> Leave us a <strong>like or comment</strong> on YouTube or Musicful – <strong>we read every single message!</strong> 👍❤️
             </div>
 
-            <!-- 1. Indie, Art Rock, Soul -->
+            <!-- 1. No Skip / Indie, Art Rock, Soul -->
             <div class="playlist-card">
                 <div class="card-header">
                     <img src="no_skip.jpg" class="img-playlist" alt="Indie, Art Rock, Soul">
                     <div>
-                        <div class="link-title">Indie, Art Rock, Soul</div>
+                        <div class="link-title">No Skip. Deep Drive. – Indie, Art Rock, Soul</div>
                         <div class="link-desc">The perfect mix for highway driving, country roads, or your evening commute.</div>
                     </div>
                 </div>
@@ -173,7 +240,7 @@
             <!-- 2. INDIE WIDE OPEN -->
             <div class="playlist-card">
                 <div class="card-header">
-                    <img src="Ziggy.jpg" class="img-playlist" alt="Indie Wide Open">
+                    <img src="Ziggy.jpg" onerror="this.onerror=null;this.src='Logo_Murphy_und_Ziggys_rund.png';" class="img-playlist" alt="INDIE WIDE OPEN">
                     <div>
                         <div class="link-title">INDIE WIDE OPEN</div>
                         <div class="link-desc">From Singer-Songwriter to Rock, Pop & Jazz</div>
@@ -185,10 +252,10 @@
                 </div>
             </div>
 
-            <!-- 3. Reggae / Anti-Stress -->
+            <!-- 3. Island Riddims & Franggn Dub (Reggae) -->
             <div class="playlist-card">
                 <div class="card-header">
-                    <img src="AI_Reggae.jpg" class="img-playlist" alt="Reggae">
+                    <img src="AI_Reggae.jpg" class="img-playlist" alt="Island Riddims & Franggn Dub">
                     <div>
                         <div class="link-title">Island Riddims & Franggn Dub 💨 The Ultimate AI Reggae</div>
                         <div class="link-desc">The ultimate anti-stress dose: Smooth roots reggae, heavy dub, and humorous dialect vibes!</div>
@@ -203,10 +270,10 @@
             <!-- 4. Rock Without Borders -->
             <div class="playlist-card">
                 <div class="card-header">
-                    <img src="Rock.jpg" class="img-playlist" alt="Rock">
+                    <img src="Rock.jpg" class="img-playlist" alt="Rock Without Borders">
                     <div>
-                        <div class="link-title">Rock Without Borders</div>
-                        <div class="link-desc">From Soft Ballads to Thrash Metal</div>
+                        <div class="link-title">Rock Without Borders: From Soft Ballads to Thrash Metal</div>
+                        <div class="link-desc">From Soft Ballads to Thrash Metal 🇩🇪🇬🇧</div>
                     </div>
                 </div>
                 <div class="card-actions">
@@ -218,10 +285,10 @@
             <!-- 5. The Love & Groove Protocol -->
             <div class="playlist-card">
                 <div class="card-header">
-                    <img src="Love.jpg" class="img-playlist" alt="Love & Groove">
+                    <img src="Love.jpg" class="img-playlist" alt="The Love & Groove Protocol">
                     <div>
-                        <div class="link-title">The Love & Groove Protocol</div>
-                        <div class="link-desc">Indie, Soul & Funk</div>
+                        <div class="link-title">The Love & Groove Protocol: Indie, Soul & Funk</div>
+                        <div class="link-desc">Nu Disco, Indie, Soul & Funk Mix (The Cyrus Protocol)</div>
                     </div>
                 </div>
                 <div class="card-actions">
@@ -230,13 +297,28 @@
                 </div>
             </div>
 
-            <!-- 6. From Vinyl to Code -->
+            <!-- 6. From Vinyl to Code (With original ID PLIdrICwyhdX7d8nY9k8F6HA68IKOIuQxV) -->
             <div class="playlist-card">
                 <div class="card-header">
-                    <img src="Groove.jpg" class="img-playlist" alt="Vinyl to Code">
+                    <img src="Groove.jpg" class="img-playlist" alt="From Vinyl to Code">
                     <div>
                         <div class="link-title">From Vinyl to Code: AI Rediscovers Funk & Soul 🕺</div>
-                        <div class="link-desc">Real retro vibes recoded</div>
+                        <div class="link-desc">Real retro vibes, Funk & Soul recoded</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7d8nY9k8F6HA68IKOIuQxV" target="_blank" class="action-btn">▶ YouTube</a>
+                    <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX7d8nY9k8F6HA68IKOIuQxV" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
+                </div>
+            </div>
+
+            <!-- 7. ARK CINEMATIC RAP (With ID PLIdrICwyhdX6tx4yv92BnFvRskfdFRo_T) -->
+            <div class="playlist-card">
+                <div class="card-header">
+                    <img src="Rap.jpg" class="img-playlist" alt="ARK CINEMATIC RAP">
+                    <div>
+                        <div class="link-title">ARK CINEMATIC RAP</div>
+                        <div class="link-desc">Epitome of Cinematic Hip-Hop & Rap</div>
                     </div>
                 </div>
                 <div class="card-actions">
@@ -245,7 +327,7 @@
                 </div>
             </div>
 
-            <!-- 7. Life in Songs -->
+            <!-- 8. Life in Songs: Personal Stories Turned into Music -->
             <div class="playlist-card">
                 <div class="card-header">
                     <img src="AI_Vibes.jpg" class="img-playlist" alt="Life in Songs">
@@ -260,7 +342,7 @@
                 </div>
             </div>
 
-            <!-- 8. Dad’s Playlist -->
+            <!-- 9. Dad’s Playlist – Music Has No Age -->
             <div class="playlist-card">
                 <div class="card-header">
                     <img src="papa.jpg" class="img-playlist" alt="Dad's Playlist">
@@ -275,28 +357,46 @@
                 </div>
             </div>
 
-            <!-- 9. Musicful Full Songs -->
-            <div class="playlist-card">
+            <!-- 10. Musicful Full Songs (WITH FULL STORY & ALL BUTTONS) -->
+            <div class="playlist-card musicful-feature">
                 <div class="card-header">
-                    <img src="Musikful.jpg" class="img-playlist" alt="Musicful">
+                    <img src="Musikful.jpg" class="img-playlist" alt="Musicful Full Songs">
                     <div>
-                        <div class="link-title">Musicful Full Songs</div>
-                        <div class="link-desc">Songs created with Musicful AI</div>
+                        <div class="link-title" style="color: #85ff00; font-weight: 800;">🎵 Musicful Full Songs (Created with Musicful AI)</div>
+                        <div class="link-desc">Full-length tracks & creative AI music experiments</div>
                     </div>
                 </div>
+
+                <div class="musicful-story">
+                    <strong>🎵 Welcome to Murphy & The Ziggys – our Musicful.AI playlist</strong><br><br>
+                    We are a virtual AI group, and this channel is run by <strong>Murphy</strong> (the only human – he controls everything). Together, we created this playlist while testing Musicful.AI. Here you'll find songs in full length – across all genres: from classical to rap, indie, soul, all the way to 8‑minute rock operas.<br><br>
+                    The playlist is constantly growing. Whenever we discover new music with Musicful.AI, or Murphy plays us something new, fresh tracks get added.<br><br>
+                    So sit back, hit play, and let yourself be surprised. 🎧<br>
+                    ➡ <em>Updated regularly – subscribe to Murphy & The Ziggys so you don't miss any new additions!</em>
+                </div>
+
                 <div class="card-actions">
                     <a href="https://www.youtube.com/playlist?list=PLIdrICwyhdX7KBcTTdBMyqRhQJ_xVTgyB" target="_blank" class="action-btn">▶ YouTube</a>
                     <a href="https://music.youtube.com/playlist?list=PLIdrICwyhdX7KBcTTdBMyqRhQJ_xVTgyB" target="_blank" class="action-btn yt-music">🎵 YouTube Music</a>
-                    <a href="https://www.musicful.ai/artist/2gp1co7r/" target="_blank" class="action-btn musicful full-width">🎶 Musicful App</a>
+                    <a href="https://www.musicful.ai/artist/2gp1co7r/" target="_blank" class="action-btn musicful full-width">🎶 Visit Murphy on Musicful App</a>
+                </div>
+
+                <div class="musicful-try-box">
+                    <div class="musicful-try-title">✨ Try Musicful yourself:</div>
+                    <div class="try-buttons-grid">
+                        <a href="https://www.musicful.ai/?utm_source=youtube-c&utm_medium=organic+video&utm_campaign=Murphylanga,260410,chenxuan" target="_blank" class="try-btn">🌐 Web Version</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.musicful.android&referrer=utm_source%3Dyoutube-c%26utm_medium%3Dcpc%26utm_campaign%3DMurphylanga%252C260410%252Cchenxuan" target="_blank" class="try-btn">▶️ Google Play</a>
+                        <a href="https://apps.apple.com/app/apple-store/id6740258878?pt=126121139&ct=Murphylanga,260410,chenxuan&mt=8" target="_blank" class="try-btn">🍎 App Store</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- 10. Beyond Imagination -->
+            <!-- 11. Beyond Imagination (With working image Hintergrund.jpg as in original!) -->
             <div class="playlist-card">
                 <div class="card-header">
-                    <img src="Experiment.jpg" class="img-playlist" alt="Beyond Imagination">
+                    <img src="Hintergrund.jpg" onerror="this.onerror=null;this.src='Experiment.jpg';" class="img-playlist" alt="Beyond Imagination">
                     <div>
-                        <div class="link-title">Beyond Imagination: The Ultimate AI Experiment 🎨🎬🎵</div>
+                        <div class="link-title">Beyond Imagination: The Ultimate AI Experiment (With Murphy & The Ziggys) 🎨🎬🎵</div>
                         <div class="link-desc">The AI Playlist That Has No Rules – Everything from us across all genres</div>
                     </div>
                 </div>
@@ -306,10 +406,10 @@
                 </div>
             </div>
 
-            <!-- 11. Calendar Songs -->
+            <!-- 12. Calendar Songs -->
             <div class="playlist-card">
                 <div class="card-header">
-                    <img src="Kalender.jpg" class="img-playlist" alt="Calendar">
+                    <img src="Kalender.jpg" class="img-playlist" alt="Calendar Playlist">
                     <div>
                         <div class="link-title">Calendar Playlist</div>
                         <div class="link-desc">Special monthly Calendar AI Songs</div>
@@ -321,10 +421,10 @@
                 </div>
             </div>
 
-            <!-- 12. Murphy & The Ziggys Christmas -->
+            <!-- 13. Murphy & The Ziggys Christmas -->
             <div class="playlist-card">
                 <div class="card-header">
-                    <img src="Christmas.jpg" class="img-playlist" alt="Christmas">
+                    <img src="Christmas.jpg" class="img-playlist" alt="Murphy & The Ziggys Christmas">
                     <div>
                         <div class="link-title">Murphy & The Ziggys Christmas</div>
                         <div class="link-desc">Experimental & beautiful Christmas AI songs you won't find on official channels</div>
